@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition"
 
--- DATE "07/21/2025 11:56:20"
+-- DATE "07/21/2025 17:06:46"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -213,9 +213,9 @@ SIGNAL \HEX5[4]~output_o\ : std_logic;
 SIGNAL \HEX5[5]~output_o\ : std_logic;
 SIGNAL \HEX5[6]~output_o\ : std_logic;
 SIGNAL \SW[2]~input_o\ : std_logic;
-SIGNAL \SW[0]~input_o\ : std_logic;
 SIGNAL \SW[1]~input_o\ : std_logic;
 SIGNAL \SW[3]~input_o\ : std_logic;
+SIGNAL \SW[0]~input_o\ : std_logic;
 SIGNAL \display0|Mux6~0_combout\ : std_logic;
 SIGNAL \display0|Mux5~0_combout\ : std_logic;
 SIGNAL \display0|Mux4~0_combout\ : std_logic;
@@ -255,7 +255,7 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: LCCOMB_X44_Y52_N16
+-- Location: LCCOMB_X44_Y41_N8
 \~QUARTUS_CREATED_GND~I\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \~QUARTUS_CREATED_GND~I_combout\ = GND
@@ -360,7 +360,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \display0|Mux6~0_combout\,
 	devoe => ww_devoe,
 	o => \HEX1[0]~output_o\);
 
@@ -372,7 +372,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \display0|Mux5~0_combout\,
 	devoe => ww_devoe,
 	o => \HEX1[1]~output_o\);
 
@@ -384,7 +384,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \display0|Mux4~0_combout\,
 	devoe => ww_devoe,
 	o => \HEX1[2]~output_o\);
 
@@ -396,7 +396,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \display0|Mux3~0_combout\,
 	devoe => ww_devoe,
 	o => \HEX1[3]~output_o\);
 
@@ -408,7 +408,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \display0|Mux2~0_combout\,
 	devoe => ww_devoe,
 	o => \HEX1[4]~output_o\);
 
@@ -420,7 +420,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \display0|Mux1~0_combout\,
 	devoe => ww_devoe,
 	o => \HEX1[5]~output_o\);
 
@@ -432,7 +432,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \display0|ALT_INV_Mux0~0_combout\,
 	devoe => ww_devoe,
 	o => \HEX1[6]~output_o\);
 
@@ -444,7 +444,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX2[0]~output_o\);
 
@@ -456,7 +456,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX2[1]~output_o\);
 
@@ -468,7 +468,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX2[2]~output_o\);
 
@@ -480,7 +480,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX2[3]~output_o\);
 
@@ -492,7 +492,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX2[4]~output_o\);
 
@@ -504,7 +504,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX2[5]~output_o\);
 
@@ -516,7 +516,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX2[6]~output_o\);
 
@@ -528,7 +528,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX3[0]~output_o\);
 
@@ -540,7 +540,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX3[1]~output_o\);
 
@@ -552,7 +552,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX3[2]~output_o\);
 
@@ -564,7 +564,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX3[3]~output_o\);
 
@@ -576,7 +576,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX3[4]~output_o\);
 
@@ -588,7 +588,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX3[5]~output_o\);
 
@@ -600,7 +600,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX3[6]~output_o\);
 
@@ -612,7 +612,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[0]~output_o\);
 
@@ -624,7 +624,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[1]~output_o\);
 
@@ -636,7 +636,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[2]~output_o\);
 
@@ -648,7 +648,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[3]~output_o\);
 
@@ -660,7 +660,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[4]~output_o\);
 
@@ -672,7 +672,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[5]~output_o\);
 
@@ -684,7 +684,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX4[6]~output_o\);
 
@@ -696,7 +696,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \display0|Mux6~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[0]~output_o\);
 
@@ -708,7 +708,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \display0|Mux5~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[1]~output_o\);
 
@@ -720,7 +720,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \display0|Mux4~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[2]~output_o\);
 
@@ -732,7 +732,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \display0|Mux3~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[3]~output_o\);
 
@@ -744,7 +744,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \display0|Mux2~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[4]~output_o\);
 
@@ -756,7 +756,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \display0|Mux1~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[5]~output_o\);
 
@@ -768,7 +768,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \display0|ALT_INV_Mux0~0_combout\,
+	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[6]~output_o\);
 
@@ -783,18 +783,6 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_SW(2),
 	o => \SW[2]~input_o\);
-
--- Location: IOIBUF_X51_Y54_N29
-\SW[0]~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_SW(0),
-	o => \SW[0]~input_o\);
 
 -- Location: IOIBUF_X51_Y54_N22
 \SW[1]~input\ : fiftyfivenm_io_ibuf
@@ -820,123 +808,135 @@ PORT MAP (
 	i => ww_SW(3),
 	o => \SW[3]~input_o\);
 
--- Location: LCCOMB_X70_Y50_N16
+-- Location: IOIBUF_X51_Y54_N29
+\SW[0]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_SW(0),
+	o => \SW[0]~input_o\);
+
+-- Location: LCCOMB_X62_Y53_N8
 \display0|Mux6~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \display0|Mux6~0_combout\ = (\SW[2]~input_o\ & (!\SW[1]~input_o\ & (\SW[0]~input_o\ $ (!\SW[3]~input_o\)))) # (!\SW[2]~input_o\ & (\SW[0]~input_o\ & (\SW[1]~input_o\ $ (!\SW[3]~input_o\))))
+-- \display0|Mux6~0_combout\ = (\SW[1]~input_o\ & (((\SW[3]~input_o\)))) # (!\SW[1]~input_o\ & (\SW[2]~input_o\ $ (((!\SW[3]~input_o\ & \SW[0]~input_o\)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100100000000110",
+	lut_mask => "1110000111100010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SW[2]~input_o\,
-	datab => \SW[0]~input_o\,
-	datac => \SW[1]~input_o\,
-	datad => \SW[3]~input_o\,
+	datab => \SW[1]~input_o\,
+	datac => \SW[3]~input_o\,
+	datad => \SW[0]~input_o\,
 	combout => \display0|Mux6~0_combout\);
 
--- Location: LCCOMB_X70_Y50_N10
+-- Location: LCCOMB_X62_Y53_N2
 \display0|Mux5~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \display0|Mux5~0_combout\ = (\SW[1]~input_o\ & ((\SW[0]~input_o\ & ((\SW[3]~input_o\))) # (!\SW[0]~input_o\ & (\SW[2]~input_o\)))) # (!\SW[1]~input_o\ & (\SW[2]~input_o\ & (\SW[0]~input_o\ $ (\SW[3]~input_o\))))
+-- \display0|Mux5~0_combout\ = (\SW[2]~input_o\ & ((\SW[3]~input_o\) # (\SW[1]~input_o\ $ (\SW[0]~input_o\)))) # (!\SW[2]~input_o\ & (\SW[1]~input_o\ & (\SW[3]~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110001000101000",
+	lut_mask => "1110001011101000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SW[2]~input_o\,
-	datab => \SW[0]~input_o\,
-	datac => \SW[1]~input_o\,
-	datad => \SW[3]~input_o\,
+	datab => \SW[1]~input_o\,
+	datac => \SW[3]~input_o\,
+	datad => \SW[0]~input_o\,
 	combout => \display0|Mux5~0_combout\);
 
--- Location: LCCOMB_X70_Y50_N20
+-- Location: LCCOMB_X62_Y53_N4
 \display0|Mux4~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \display0|Mux4~0_combout\ = (\SW[2]~input_o\ & (\SW[3]~input_o\ & ((\SW[1]~input_o\) # (!\SW[0]~input_o\)))) # (!\SW[2]~input_o\ & (!\SW[0]~input_o\ & (\SW[1]~input_o\ & !\SW[3]~input_o\)))
+-- \display0|Mux4~0_combout\ = (\SW[2]~input_o\ & (((\SW[3]~input_o\)))) # (!\SW[2]~input_o\ & (\SW[1]~input_o\ & ((\SW[3]~input_o\) # (!\SW[0]~input_o\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010001000010000",
+	lut_mask => "1110000011100100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SW[2]~input_o\,
-	datab => \SW[0]~input_o\,
-	datac => \SW[1]~input_o\,
-	datad => \SW[3]~input_o\,
+	datab => \SW[1]~input_o\,
+	datac => \SW[3]~input_o\,
+	datad => \SW[0]~input_o\,
 	combout => \display0|Mux4~0_combout\);
 
--- Location: LCCOMB_X70_Y50_N22
+-- Location: LCCOMB_X62_Y53_N22
 \display0|Mux3~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \display0|Mux3~0_combout\ = (\SW[1]~input_o\ & ((\SW[2]~input_o\ & (\SW[0]~input_o\)) # (!\SW[2]~input_o\ & (!\SW[0]~input_o\ & \SW[3]~input_o\)))) # (!\SW[1]~input_o\ & (!\SW[3]~input_o\ & (\SW[2]~input_o\ $ (\SW[0]~input_o\))))
+-- \display0|Mux3~0_combout\ = (\SW[1]~input_o\ & ((\SW[3]~input_o\) # ((\SW[2]~input_o\ & \SW[0]~input_o\)))) # (!\SW[1]~input_o\ & (\SW[2]~input_o\ $ (((!\SW[3]~input_o\ & \SW[0]~input_o\)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001000010000110",
+	lut_mask => "1110100111100010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SW[2]~input_o\,
-	datab => \SW[0]~input_o\,
-	datac => \SW[1]~input_o\,
-	datad => \SW[3]~input_o\,
+	datab => \SW[1]~input_o\,
+	datac => \SW[3]~input_o\,
+	datad => \SW[0]~input_o\,
 	combout => \display0|Mux3~0_combout\);
 
--- Location: LCCOMB_X70_Y50_N24
+-- Location: LCCOMB_X62_Y53_N24
 \display0|Mux2~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \display0|Mux2~0_combout\ = (\SW[1]~input_o\ & (((\SW[0]~input_o\ & !\SW[3]~input_o\)))) # (!\SW[1]~input_o\ & ((\SW[2]~input_o\ & ((!\SW[3]~input_o\))) # (!\SW[2]~input_o\ & (\SW[0]~input_o\))))
+-- \display0|Mux2~0_combout\ = (\SW[0]~input_o\) # ((\SW[1]~input_o\ & ((\SW[3]~input_o\))) # (!\SW[1]~input_o\ & (\SW[2]~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000010011001110",
+	lut_mask => "1111111111100010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SW[2]~input_o\,
-	datab => \SW[0]~input_o\,
-	datac => \SW[1]~input_o\,
-	datad => \SW[3]~input_o\,
+	datab => \SW[1]~input_o\,
+	datac => \SW[3]~input_o\,
+	datad => \SW[0]~input_o\,
 	combout => \display0|Mux2~0_combout\);
 
--- Location: LCCOMB_X70_Y50_N2
+-- Location: LCCOMB_X62_Y53_N26
 \display0|Mux1~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \display0|Mux1~0_combout\ = (\SW[2]~input_o\ & (\SW[0]~input_o\ & (\SW[1]~input_o\ $ (\SW[3]~input_o\)))) # (!\SW[2]~input_o\ & (!\SW[3]~input_o\ & ((\SW[0]~input_o\) # (\SW[1]~input_o\))))
+-- \display0|Mux1~0_combout\ = (\SW[2]~input_o\ & ((\SW[3]~input_o\) # ((\SW[1]~input_o\ & \SW[0]~input_o\)))) # (!\SW[2]~input_o\ & ((\SW[1]~input_o\) # ((!\SW[3]~input_o\ & \SW[0]~input_o\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000100011010100",
+	lut_mask => "1110110111100100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SW[2]~input_o\,
-	datab => \SW[0]~input_o\,
-	datac => \SW[1]~input_o\,
-	datad => \SW[3]~input_o\,
+	datab => \SW[1]~input_o\,
+	datac => \SW[3]~input_o\,
+	datad => \SW[0]~input_o\,
 	combout => \display0|Mux1~0_combout\);
 
--- Location: LCCOMB_X70_Y50_N12
+-- Location: LCCOMB_X62_Y53_N12
 \display0|Mux0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \display0|Mux0~0_combout\ = (\SW[0]~input_o\ & ((\SW[3]~input_o\) # (\SW[2]~input_o\ $ (\SW[1]~input_o\)))) # (!\SW[0]~input_o\ & ((\SW[1]~input_o\) # (\SW[2]~input_o\ $ (\SW[3]~input_o\))))
+-- \display0|Mux0~0_combout\ = (\SW[2]~input_o\ & (!\SW[3]~input_o\ & ((!\SW[0]~input_o\) # (!\SW[1]~input_o\)))) # (!\SW[2]~input_o\ & (\SW[1]~input_o\ $ ((\SW[3]~input_o\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111110101111010",
+	lut_mask => "0001011000011110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SW[2]~input_o\,
-	datab => \SW[0]~input_o\,
-	datac => \SW[1]~input_o\,
-	datad => \SW[3]~input_o\,
+	datab => \SW[1]~input_o\,
+	datac => \SW[3]~input_o\,
+	datad => \SW[0]~input_o\,
 	combout => \display0|Mux0~0_combout\);
 
 -- Location: UNVM_X0_Y40_N40
