@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity VendingMachine is
 	port(
@@ -16,19 +17,45 @@ end VendingMachine;
 architecture VendingMachine_ARCH of VendingMachine is
 	component DisplayHexadecimal is
 		port(
-			SW  : in  std_logic_vector(3 downto 0);
+			DIG : in std_logic_vector(3 downto 0);
 			HEX : out std_logic_vector(6 downto 0)
 		);
 	end component DisplayHexadecimal;
+	component DisplayDecimal is
+		port(
+			DIG : in std_logic_vector(3 downto 0);
+			HEX : out std_logic_vector(6 downto 0)
+		);
+	end component DisplayDecimal;
 begin
-	display0 : component DisplayHexadecimal
+	display0 : component DisplayDecimal
 		port map(
-			SW   => SW,
+			DIG => SW,
 			HEX => HEX0
 		);
-	display5 : component DisplayHexadecimal
+	display1 : component DisplayDecimal
 		port map(
-			SW   => SW,
+			DIG => SW,
+			HEX => HEX1
+		);
+	display2 : component DisplayDecimal
+		port map(
+			DIG => std_logic_vector(to_unsigned(10, 4)),
+			HEX => HEX2
+		);
+	display3 : component DisplayDecimal
+		port map(
+			DIG => std_logic_vector(to_unsigned(10, 4)),
+			HEX => HEX3
+		);
+	display4 : component DisplayDecimal
+		port map(
+			DIG => std_logic_vector(to_unsigned(10, 4)),
+			HEX => HEX4
+		);
+	display5 : component DisplayDecimal
+		port map(
+			DIG => std_logic_vector(to_unsigned(10, 4)),
 			HEX => HEX5
 		);
 end VendingMachine_ARCH;

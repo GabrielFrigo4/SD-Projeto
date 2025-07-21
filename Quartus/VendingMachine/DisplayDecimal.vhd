@@ -2,14 +2,14 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity DisplayHexadecimal is
+entity DisplayDecimal is
 	port(
 		DIG : in std_logic_vector(3 downto 0);
 		HEX : out std_logic_vector(6 downto 0)
 	);
-end DisplayHexadecimal;
+end DisplayDecimal;
 
-architecture DisplayHexadecimal_ARCH of DisplayHexadecimal is
+architecture DisplayDecimal_ARCH of DisplayDecimal is
 begin
 	with DIG select
 		HEX <=
@@ -23,10 +23,5 @@ begin
 			"1111000" when "0111", -- 7
 			"0000000" when "1000", -- 8
 			"0010000" when "1001", -- 9
-			"0001000" when "1010", -- A
-			"0000011" when "1011", -- b
-			"1000110" when "1100", -- C
-			"0100001" when "1101", -- d
-			"0000110" when "1110", -- E
-			"0001110" when others; -- F
-end DisplayHexadecimal_ARCH;
+			"1111111" when others; -- Blank
+end DisplayDecimal_ARCH;
