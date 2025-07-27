@@ -1,12 +1,10 @@
 |VendingMachine
-SW[0] => DisplayDecimal:display0.DIG[0]
-SW[0] => DisplayDecimal:display1.DIG[0]
-SW[1] => DisplayDecimal:display0.DIG[1]
-SW[1] => DisplayDecimal:display1.DIG[1]
-SW[2] => DisplayDecimal:display0.DIG[2]
-SW[2] => DisplayDecimal:display1.DIG[2]
-SW[3] => DisplayDecimal:display0.DIG[3]
-SW[3] => DisplayDecimal:display1.DIG[3]
+clk => StateMachine:state_machine.clk
+SW[0] => StateMachine:state_machine.nickel_in
+SW[1] => StateMachine:state_machine.dime_in
+SW[2] => StateMachine:state_machine.quarter_in
+KEY[0] => ~NO_FANOUT~
+KEY[1] => StateMachine:state_machine.rst
 HEX0[0] <= DisplayDecimal:display0.HEX[0]
 HEX0[1] <= DisplayDecimal:display0.HEX[1]
 HEX0[2] <= DisplayDecimal:display0.HEX[2]
@@ -49,6 +47,27 @@ HEX5[3] <= DisplayDecimal:display5.HEX[3]
 HEX5[4] <= DisplayDecimal:display5.HEX[4]
 HEX5[5] <= DisplayDecimal:display5.HEX[5]
 HEX5[6] <= DisplayDecimal:display5.HEX[6]
+
+
+|VendingMachine|StateMachine:state_machine
+clk => present_state~1.DATAIN
+rst => present_state~3.DATAIN
+nickel_in => next_state.OUTPUTSELECT
+nickel_in => next_state.OUTPUTSELECT
+nickel_in => next_state.OUTPUTSELECT
+nickel_in => Selector1.IN3
+nickel_in => Selector2.IN4
+nickel_in => Selector3.IN4
+nickel_in => Selector4.IN4
+nickel_in => Selector5.IN4
+dime_in => next_state.OUTPUTSELECT
+dime_in => next_state.OUTPUTSELECT
+dime_in => next_state.DATAA
+quarter_in => next_state.DATAA
+quarter_in => next_state.DATAA
+candy_out <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+nickel_out <= nickel_out.DB_MAX_OUTPUT_PORT_TYPE
+dime_out <= dime_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VendingMachine|DisplayDecimal:display0

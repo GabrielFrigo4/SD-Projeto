@@ -1,5 +1,5 @@
 
-State Machine - |VendingMachine|present_state
+State Machine - |VendingMachine|StateMachine:state_machine|present_state
 Name present_state.st45 present_state.st40 present_state.st35 present_state.st30 present_state.st25 present_state.st20 present_state.st15 present_state.st10 present_state.st5 present_state.st0 
 present_state.st0 0 0 0 0 0 0 0 0 0 0 
 present_state.st5 0 0 0 0 0 0 0 0 1 1 
