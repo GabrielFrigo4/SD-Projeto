@@ -1,131 +1,153 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.vending_machine.all;
 
 entity StateMachine is
 	port(
 		clk, rst									: in std_logic;
 		nickel_in, dime_in, quarter_in	: in std_logic;
-		candy_out, nickel_out, dime_out	: out std_logic
+		present_state							: out state;
+		candy_out								: out std_logic;
+		nickel_out, dime_out					: out std_logic_vector(1 downto 0) -- Quantidade de cada moeda no troco
 	);
 end StateMachine;
 
 architecture StateMachine_ARCH of StateMachine is
-	type state is (st0, st5, st10, st15, st20, st25, st30, st35, st40, st45);
-	signal present_state, next_state	: state;
+	signal present_state_signal, next_state_signal	: state;
+	signal nickel_out_signal, dime_out_signal			: std_logic_vector(1 downto 0) := "00";
 begin
+	present_state <= present_state_signal;
+	nickel_out <= nickel_out_signal;
+	dime_out <= dime_out_signal;
+
 	-- Lower section of the FSM
 	process (rst, clk)
 	begin
 		if (rst = '1') then
-			present_state <= st0;
+			present_state_signal <= st0;
 		elsif (clk'event and clk = '1') then
-			present_state <= next_state;
+			present_state_signal <= next_state_signal;
 		end if;
 	end process;
 
 	-- Upper section of the FSM
-	process (present_state, nickel_in, dime_in, quarter_in)
+	process (present_state_signal, nickel_in, dime_in, quarter_in)
 	begin
-		case present_state is
+		case present_state_signal is
 			when st0 =>
-				candy_out	<= '0';
-				nickel_out	<= '0';
-				dime_out	<= '0';
+				candy_out <= '0';
+				nickel_out_signal <= "00";
+				dime_out_signal	<= "00";
 				if (nickel_in = '1') then
-					next_state <= st5;
+					next_state_signal <= st5;
 				elsif (dime_in = '1') then
-					next_state <= st10;
+					next_state_signal <= st10;
 				elsif (quarter_in = '1') then
-					next_state <= st25;
+					next_state_signal <= st25;
 				else
-					next_state <= st0;
+					next_state_signal <= st0;
 				end if;
 
 			when st5 =>
-				candy_out	<= '0';
-				nickel_out	<= '0';
-				dime_out	<= '0';
+				candy_out <= '0';
+				nickel_out_signal <= "00";
+				dime_out_signal	<= "00";
 				if (nickel_in = '1') then
-					next_state <= st10;
+					next_state_signal <= st10;
 				elsif (dime_in = '1') then
-					next_state <= st15;
+					next_state_signal <= st15;
 				elsif (quarter_in = '1') then
-					next_state <= st30;
+					next_state_signal <= st30;
 				else
-					next_state <= st5;
+					next_state_signal <= st5;
 				end if;
 
 			when st10 =>
-				candy_out	<= '0';
-				nickel_out	<= '0';
-				dime_out	<= '0';
+				candy_out <= '0';
+				nickel_out_signal <= "00";
+				dime_out_signal	<= "00";
 				if (nickel_in = '1') then
-					next_state <= st15;
+					next_state_signal <= st15;
 				elsif (dime_in = '1') then
-					next_state <= st20;
+					next_state_signal <= st20;
 				elsif (quarter_in = '1') then
-					next_state <= st35;
+					next_state_signal <= st35;
 				else
-					next_state <= st10;
+					next_state_signal <= st10;
 				end if;
 
 			when st15 =>
-				candy_out	<= '0';
-				nickel_out	<= '0';
-				dime_out	<= '0';
+				candy_out <= '0';
+				nickel_out_signal <= "00";
+				dime_out_signal	<= "00";
 				if (nickel_in = '1') then
-					next_state <= st20;
+					next_state_signal <= st20;
 				elsif (dime_in = '1') then
-					next_state <= st25;
+					next_state_signal <= st25;
 				elsif (quarter_in = '1') then
-					next_state <= st40;
+					next_state_signal <= st40;
 				else
-					next_state <= st15;
+					next_state_signal <= st15;
 				end if;
 
 			when st20 =>
-				candy_out	<= '0';
-				nickel_out	<= '0';
-				dime_out	<= '0';
+				candy_out <= '0';
+				nickel_out_signal <= "00";
+				dime_out_signal	<= "00";
 				if (nickel_in = '1') then
-					next_state <= st25;
+					next_state_signal <= st25;
 				elsif (dime_in = '1') then
-					next_state <= st30;
+					next_state_signal <= st30;
 				elsif (quarter_in = '1') then
-					next_state <= st45;
+					next_state_signal <= st45;
 				else
-					next_state <= st20;
+					next_state_signal <= st20;
 				end if;
 
 			when st25 =>
-				candy_out	<= '1';
-				nickel_out	<= '0';
-				dime_out	<= '0';
-				next_state	<= st0;
+				candy_out <= '0'; -- Agora e 1 somente no stcandy
+				nickel_out_signal <= nickel_out_signal;
+				dime_out_signal <= dime_out_signal;
+				next_state_signal <= stcandy;
 
 			when st30 =>
-				candy_out	<= '1';
-				nickel_out	<= '1';
-				dime_out	<= '0';
-				next_state	<= st0;
+				candy_out <= '0'; -- Agora e 1 somente no stcandy
+				nickel_out_signal <= std_logic_vector(unsigned(nickel_out_signal) + 1);
+				dime_out_signal <= dime_out_signal;
+				next_state_signal <= stcandy;
 
 			when st35 =>
-				candy_out	<= '1';
-				nickel_out	<= '0';
-				dime_out	<= '1';
-				next_state	<= st0;
+				candy_out <= '0'; -- Agora e 1 somente no stcandy
+				nickel_out_signal <= nickel_out_signal;
+				dime_out_signal <= std_logic_vector(unsigned(dime_out_signal) + 1);
+				next_state_signal <= stcandy;
 
 			when st40 =>
-				candy_out	<= '0';
-				nickel_out	<= '1';
-				dime_out	<= '0';
-				next_state	<= st35;
+				candy_out <= '0';
+				nickel_out_signal <= std_logic_vector(unsigned(nickel_out_signal) + 1);
+				dime_out_signal <= dime_out_signal;
+				next_state_signal <= st35;
 
 			when st45 =>
-				candy_out	<= '0';
-				nickel_out	<= '0';
-				dime_out	<= '1';
-				next_state	<= st35;
+				candy_out <= '0';
+				nickel_out_signal <= nickel_out_signal;
+				dime_out_signal <= std_logic_vector(unsigned(dime_out_signal) + 1);
+				next_state_signal <= st35;
+				
+			when stcandy =>
+				candy_out <= '1';
+				nickel_out_signal <= nickel_out_signal;
+				dime_out_signal <= dime_out_signal;
+				if (nickel_in = '1') then
+					next_state_signal <= st5;
+				elsif (dime_in = '1') then
+					next_state_signal <= st10;
+				elsif (quarter_in = '1') then
+					next_state_signal <= st25;
+				else
+					next_state_signal <= stcandy;
+				end if;
 		end case;
 	end process;
 

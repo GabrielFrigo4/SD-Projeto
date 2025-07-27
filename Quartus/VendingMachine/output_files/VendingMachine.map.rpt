@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VendingMachine
-Sun Jul 27 11:59:18 2025
+Sun Jul 27 14:00:21 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -13,7 +13,7 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |VendingMachine|StateMachine:state_machine|present_state
+  8. State Machine - |VendingMachine|StateMachine:state_machine|present_state_signal
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
  11. Port Connectivity Checks: "DisplayDecimal:display5"
@@ -52,15 +52,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 27 11:59:18 2025           ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 27 14:00:21 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; VendingMachine                                  ;
 ; Top-level Entity Name              ; VendingMachine                                  ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 18                                              ;
-;     Total combinational functions  ; 18                                              ;
-;     Dedicated logic registers      ; 10                                              ;
-; Total registers                    ; 10                                              ;
+; Total logic elements               ; 31                                              ;
+;     Total combinational functions  ; 31                                              ;
+;     Dedicated logic registers      ; 11                                              ;
+; Total registers                    ; 11                                              ;
 ; Total pins                         ; 48                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -174,15 +174,16 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                    ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------+---------+
-; VendingMachine.vhd               ; yes             ; User VHDL File        ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd ;         ;
-; StateMachine.vhd                 ; yes             ; User VHDL File        ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd   ;         ;
-; DisplayDecimal.vhd               ; yes             ; Auto-Found VHDL File  ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd ;         ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------------+---------+
+; VendingMachine.vhd               ; yes             ; User VHDL File        ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd       ;         ;
+; StateMachine.vhd                 ; yes             ; User VHDL File        ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd         ;         ;
+; VendingMachineStates.vhd         ; yes             ; User VHDL File        ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachineStates.vhd ;         ;
+; DisplayDecimal.vhd               ; yes             ; Auto-Found VHDL File  ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd       ;         ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -190,20 +191,20 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 18          ;
+; Estimated Total logic elements              ; 31          ;
 ;                                             ;             ;
-; Total combinational functions               ; 18          ;
+; Total combinational functions               ; 31          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 8           ;
-;     -- 3 input functions                    ; 10          ;
-;     -- <=2 input functions                  ; 0           ;
+;     -- 4 input functions                    ; 20          ;
+;     -- 3 input functions                    ; 9           ;
+;     -- <=2 input functions                  ; 2           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 18          ;
+;     -- normal mode                          ; 31          ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
-; Total registers                             ; 10          ;
-;     -- Dedicated logic registers            ; 10          ;
+; Total registers                             ; 11          ;
+;     -- Dedicated logic registers            ; 11          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 48          ;
@@ -211,9 +212,9 @@ on the Quartus Prime software download page.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; SW[0]~input ;
-; Maximum fan-out                             ; 10          ;
-; Total fan-out                               ; 144         ;
-; Average fan-out                             ; 1.16        ;
+; Maximum fan-out                             ; 13          ;
+; Total fan-out                               ; 205         ;
+; Average fan-out                             ; 1.49        ;
 +---------------------------------------------+-------------+
 
 
@@ -222,29 +223,31 @@ on the Quartus Prime software download page.
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                        ; Entity Name    ; Library Name ;
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------+----------------+--------------+
-; |VendingMachine                 ; 18 (0)              ; 10 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 48   ; 0            ; 0          ; |VendingMachine                            ; VendingMachine ; work         ;
-;    |StateMachine:state_machine| ; 18 (18)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |VendingMachine|StateMachine:state_machine ; StateMachine   ; work         ;
+; |VendingMachine                 ; 31 (4)              ; 11 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 48   ; 0            ; 0          ; |VendingMachine                            ; VendingMachine ; work         ;
+;    |DisplayDecimal:display2|    ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |VendingMachine|DisplayDecimal:display2    ; DisplayDecimal ; work         ;
+;    |StateMachine:state_machine| ; 21 (21)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |VendingMachine|StateMachine:state_machine ; StateMachine   ; work         ;
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |VendingMachine|StateMachine:state_machine|present_state                                                                                                                                                           ;
-+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+
-; Name               ; present_state.st45 ; present_state.st40 ; present_state.st35 ; present_state.st30 ; present_state.st25 ; present_state.st20 ; present_state.st15 ; present_state.st10 ; present_state.st5 ; present_state.st0 ;
-+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+
-; present_state.st0  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ;
-; present_state.st5  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 1                 ; 1                 ;
-; present_state.st10 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 1                  ; 0                 ; 1                 ;
-; present_state.st15 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 1                  ; 0                  ; 0                 ; 1                 ;
-; present_state.st20 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 1                  ; 0                  ; 0                  ; 0                 ; 1                 ;
-; present_state.st25 ; 0                  ; 0                  ; 0                  ; 0                  ; 1                  ; 0                  ; 0                  ; 0                  ; 0                 ; 1                 ;
-; present_state.st30 ; 0                  ; 0                  ; 0                  ; 1                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 1                 ;
-; present_state.st35 ; 0                  ; 0                  ; 1                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 1                 ;
-; present_state.st40 ; 0                  ; 1                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 1                 ;
-; present_state.st45 ; 1                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 1                 ;
-+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |VendingMachine|StateMachine:state_machine|present_state_signal                                                                                                                                                                                                                                                                   ;
++------------------------------+------------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+--------------------------+--------------------------+
+; Name                         ; present_state_signal.stcandy ; present_state_signal.st45 ; present_state_signal.st40 ; present_state_signal.st35 ; present_state_signal.st30 ; present_state_signal.st25 ; present_state_signal.st20 ; present_state_signal.st15 ; present_state_signal.st10 ; present_state_signal.st5 ; present_state_signal.st0 ;
++------------------------------+------------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+--------------------------+--------------------------+
+; present_state_signal.st0     ; 0                            ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ;
+; present_state_signal.st5     ; 0                            ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                        ; 1                        ;
+; present_state_signal.st10    ; 0                            ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                        ; 1                        ;
+; present_state_signal.st15    ; 0                            ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                        ; 1                        ;
+; present_state_signal.st20    ; 0                            ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                        ; 1                        ;
+; present_state_signal.st25    ; 0                            ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                        ; 1                        ;
+; present_state_signal.st30    ; 0                            ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 1                        ;
+; present_state_signal.st35    ; 0                            ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 1                        ;
+; present_state_signal.st40    ; 0                            ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 1                        ;
+; present_state_signal.st45    ; 0                            ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 1                        ;
+; present_state_signal.stcandy ; 1                            ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 1                        ;
++------------------------------+------------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+--------------------------+--------------------------+
 
 
 +------------------------------------------------------+
@@ -252,23 +255,23 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 10    ;
+; Total registers                              ; 11    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 10    ;
+; Number of registers using Asynchronous Clear ; 11    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |VendingMachine|StateMachine:state_machine|next_state ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |VendingMachine|StateMachine:state_machine|next_state_signal ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -277,8 +280,7 @@ Encoding Type:  One-Hot
 ; Port      ; Type  ; Severity ; Details              ;
 +-----------+-------+----------+----------------------+
 ; en        ; Input ; Info     ; Stuck at GND         ;
-; dig[2..0] ; Input ; Info     ; Stuck at GND         ;
-; dig[3]    ; Input ; Info     ; Stuck at VCC         ;
+; dig[3..2] ; Input ; Info     ; Stuck at GND         ;
 +-----------+-------+----------+----------------------+
 
 
@@ -288,33 +290,29 @@ Encoding Type:  One-Hot
 ; Port      ; Type  ; Severity ; Details              ;
 +-----------+-------+----------+----------------------+
 ; en        ; Input ; Info     ; Stuck at GND         ;
-; dig[1..0] ; Input ; Info     ; Stuck at GND         ;
-; dig[3]    ; Input ; Info     ; Stuck at GND         ;
-; dig[2]    ; Input ; Info     ; Stuck at VCC         ;
+; dig[3..2] ; Input ; Info     ; Stuck at GND         ;
 +-----------+-------+----------+----------------------+
 
 
 +-----------------------------------------------------+
 ; Port Connectivity Checks: "DisplayDecimal:display3" ;
-+-----------+-------+----------+----------------------+
-; Port      ; Type  ; Severity ; Details              ;
-+-----------+-------+----------+----------------------+
-; en        ; Input ; Info     ; Stuck at GND         ;
-; dig[3..2] ; Input ; Info     ; Stuck at GND         ;
-; dig[1]    ; Input ; Info     ; Stuck at VCC         ;
-; dig[0]    ; Input ; Info     ; Stuck at GND         ;
-+-----------+-------+----------+----------------------+
++--------+-------+----------+-------------------------+
+; Port   ; Type  ; Severity ; Details                 ;
++--------+-------+----------+-------------------------+
+; en     ; Input ; Info     ; Stuck at VCC            ;
+; dig[3] ; Input ; Info     ; Stuck at GND            ;
+; dig[1] ; Input ; Info     ; Stuck at GND            ;
++--------+-------+----------+-------------------------+
 
 
 +-----------------------------------------------------+
 ; Port Connectivity Checks: "DisplayDecimal:display2" ;
-+-----------+-------+----------+----------------------+
-; Port      ; Type  ; Severity ; Details              ;
-+-----------+-------+----------+----------------------+
-; en        ; Input ; Info     ; Stuck at GND         ;
-; dig[3..1] ; Input ; Info     ; Stuck at GND         ;
-; dig[0]    ; Input ; Info     ; Stuck at VCC         ;
-+-----------+-------+----------+----------------------+
++--------+-------+----------+-------------------------+
+; Port   ; Type  ; Severity ; Details                 ;
++--------+-------+----------+-------------------------+
+; en     ; Input ; Info     ; Stuck at VCC            ;
+; dig[3] ; Input ; Info     ; Stuck at GND            ;
++--------+-------+----------+-------------------------+
 
 
 +-----------------------------------------------------+
@@ -337,14 +335,13 @@ Encoding Type:  One-Hot
 +-----------+-------+----------+----------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "StateMachine:state_machine"                                                               ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; nickel_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; dime_out   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "StateMachine:state_machine"                                                                      ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; present_state.st0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -353,16 +350,18 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 48                          ;
-; cycloneiii_ff         ; 10                          ;
-;     CLR               ; 10                          ;
-; cycloneiii_lcell_comb ; 20                          ;
-;     normal            ; 20                          ;
+; cycloneiii_ff         ; 11                          ;
+;     CLR               ; 11                          ;
+; cycloneiii_lcell_comb ; 34                          ;
+;     normal            ; 34                          ;
 ;         0 data inputs ; 2                           ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 8                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 20                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.66                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.10                        ;
 +-----------------------+-----------------------------+
 
 
@@ -381,65 +380,75 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Sun Jul 27 11:59:10 2025
+    Info: Processing started: Sun Jul 27 14:00:13 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VendingMachine -c VendingMachine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file VendingMachine.vhd
-    Info (12022): Found design unit 1: VendingMachine-VendingMachine_ARCH File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 19
-    Info (12023): Found entity 1: VendingMachine File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 5
+    Info (12022): Found design unit 1: VendingMachine-VendingMachine_ARCH File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 20
+    Info (12023): Found entity 1: VendingMachine File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 6
 Warning (12019): Can't analyze file -- file SevenSegment.vhd is missing
 Warning (12019): Can't analyze file -- file ContadorBinario.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file StateMachine.vhd
-    Info (12022): Found design unit 1: StateMachine-StateMachine_ARCH File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 12
-    Info (12023): Found entity 1: StateMachine File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 4
+    Info (12022): Found design unit 1: StateMachine-StateMachine_ARCH File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 16
+    Info (12023): Found entity 1: StateMachine File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 6
+Info (12021): Found 2 design units, including 0 entities, in source file VendingMachineStates.vhd
+    Info (12022): Found design unit 1: vending_machine File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachineStates.vhd Line: 1
+    Info (12022): Found design unit 2: vending_machine-body File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachineStates.vhd Line: 5
 Info (12127): Elaborating entity "VendingMachine" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at VendingMachine.vhd(20): object "nickel_out" assigned a value but never read File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 20
-Warning (10036): Verilog HDL or VHDL warning at VendingMachine.vhd(20): object "dime_out" assigned a value but never read File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 20
-Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:state_machine" File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 44
+Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:state_machine" File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 52
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(110): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(111): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(116): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(117): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(122): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 122
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(123): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(128): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(129): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(134): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 134
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(135): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 135
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(140): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 140
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(141): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 141
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(35): inferring latch(es) for signal or variable "nickel_out_signal", which holds its previous value in one or more paths through the process File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 35
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(35): inferring latch(es) for signal or variable "dime_out_signal", which holds its previous value in one or more paths through the process File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 35
+Info (10041): Inferred latch for "dime_out_signal[0]" at StateMachine.vhd(35) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 35
+Info (10041): Inferred latch for "dime_out_signal[1]" at StateMachine.vhd(35) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 35
+Info (10041): Inferred latch for "nickel_out_signal[0]" at StateMachine.vhd(35) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 35
+Info (10041): Inferred latch for "nickel_out_signal[1]" at StateMachine.vhd(35) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 35
 Warning (12125): Using design file DisplayDecimal.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: DisplayDecimal-DisplayDecimal_ARCH File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd Line: 12
     Info (12023): Found entity 1: DisplayDecimal File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd Line: 4
-Info (12128): Elaborating entity "DisplayDecimal" for hierarchy "DisplayDecimal:display0" File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 57
+Info (12128): Elaborating entity "DisplayDecimal" for hierarchy "DisplayDecimal:display0" File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 66
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 10
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 10
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 10
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 11
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 11
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 11
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 11
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 11
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 11
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 11
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 13
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 13
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 13
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 13
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 13
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 13
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 13
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 11
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 11
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 11
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 12
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 13
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 14
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 16
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 16
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 16
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 16
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 16
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 16
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 185 assignments for entity "DE10_Lite" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[0] -entity DE10_Lite was ignored
@@ -630,15 +639,15 @@ Warning (20013): Ignored 185 assignments for entity "DE10_Lite" -- entity does n
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 9
-Info (21057): Implemented 66 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 10
+Info (21057): Implemented 79 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 18 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 233 warnings
-    Info: Peak virtual memory: 511 megabytes
-    Info: Processing ended: Sun Jul 27 11:59:18 2025
+    Info (21061): Implemented 31 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 236 warnings
+    Info: Peak virtual memory: 509 megabytes
+    Info: Processing ended: Sun Jul 27 14:00:21 2025
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Total CPU time (on all processors): 00:00:27
 
 

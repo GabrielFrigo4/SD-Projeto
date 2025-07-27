@@ -431,4 +431,5 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VHDL_FILE SevenSegment.vhd
 set_global_assignment -name VHDL_FILE ContadorBinario.vhd
 set_global_assignment -name VHDL_FILE StateMachine.vhd
+set_global_assignment -name VHDL_FILE VendingMachineStates.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

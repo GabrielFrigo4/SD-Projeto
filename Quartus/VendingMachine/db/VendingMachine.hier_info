@@ -50,24 +50,37 @@ HEX5[6] <= DisplayDecimal:display5.HEX[6]
 
 
 |VendingMachine|StateMachine:state_machine
-clk => present_state~1.DATAIN
-rst => present_state~3.DATAIN
-nickel_in => next_state.OUTPUTSELECT
-nickel_in => next_state.OUTPUTSELECT
-nickel_in => next_state.OUTPUTSELECT
-nickel_in => Selector1.IN3
-nickel_in => Selector2.IN4
-nickel_in => Selector3.IN4
+clk => present_state_signal~1.DATAIN
+rst => present_state_signal~3.DATAIN
+nickel_in => next_state_signal.OUTPUTSELECT
+nickel_in => next_state_signal.OUTPUTSELECT
+nickel_in => next_state_signal.OUTPUTSELECT
 nickel_in => Selector4.IN4
-nickel_in => Selector5.IN4
-dime_in => next_state.OUTPUTSELECT
-dime_in => next_state.OUTPUTSELECT
-dime_in => next_state.DATAA
-quarter_in => next_state.DATAA
-quarter_in => next_state.DATAA
-candy_out <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-nickel_out <= nickel_out.DB_MAX_OUTPUT_PORT_TYPE
-dime_out <= dime_out.DB_MAX_OUTPUT_PORT_TYPE
+nickel_in => Selector5.IN5
+nickel_in => Selector6.IN4
+nickel_in => Selector7.IN4
+nickel_in => Selector8.IN5
+dime_in => next_state_signal.OUTPUTSELECT
+dime_in => next_state_signal.OUTPUTSELECT
+dime_in => next_state_signal.DATAA
+quarter_in => next_state_signal.DATAA
+quarter_in => next_state_signal.DATAA
+present_state.st0 <= present_state.st0.DB_MAX_OUTPUT_PORT_TYPE
+present_state.st5 <= present_state.st5.DB_MAX_OUTPUT_PORT_TYPE
+present_state.st10 <= present_state.st10.DB_MAX_OUTPUT_PORT_TYPE
+present_state.st15 <= present_state.st15.DB_MAX_OUTPUT_PORT_TYPE
+present_state.st20 <= present_state.st20.DB_MAX_OUTPUT_PORT_TYPE
+present_state.st25 <= present_state.st25.DB_MAX_OUTPUT_PORT_TYPE
+present_state.st30 <= present_state.st30.DB_MAX_OUTPUT_PORT_TYPE
+present_state.st35 <= present_state.st35.DB_MAX_OUTPUT_PORT_TYPE
+present_state.st40 <= present_state.st40.DB_MAX_OUTPUT_PORT_TYPE
+present_state.st45 <= present_state.st45.DB_MAX_OUTPUT_PORT_TYPE
+present_state.stcandy <= present_state.stcandy.DB_MAX_OUTPUT_PORT_TYPE
+candy_out <= candy_out.DB_MAX_OUTPUT_PORT_TYPE
+nickel_out[0] <= nickel_out_signal[0].DB_MAX_OUTPUT_PORT_TYPE
+nickel_out[1] <= nickel_out_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+dime_out[0] <= dime_out_signal[0].DB_MAX_OUTPUT_PORT_TYPE
+dime_out[1] <= dime_out_signal[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VendingMachine|DisplayDecimal:display0
