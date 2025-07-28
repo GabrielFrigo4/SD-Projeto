@@ -3,9 +3,9 @@ use ieee.std_logic_1164.all;
 
 entity DisplayDecimal is
 	port(
-		EN  : in std_logic;
-		DIG : in std_logic_vector(3 downto 0);
-		HEX : out std_logic_vector(6 downto 0)
+		EN	: in std_logic;
+		DIG	: in std_logic_vector(3 downto 0);
+		HEX	: out std_logic_vector(6 downto 0)
 	);
 end DisplayDecimal;
 

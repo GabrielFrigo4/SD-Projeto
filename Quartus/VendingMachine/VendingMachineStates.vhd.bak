@@ -1,9 +1,0 @@
--- Em um arquivo separado
-package StateTypes is
-    type state_type is (IDLE, RUN, STOP);
-end package;
-
-package body StateTypes is end package body;
-
--- E então use no seu arquivo
-use work.StateTypes.all;
