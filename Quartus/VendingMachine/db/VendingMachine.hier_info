@@ -1,9 +1,8 @@
 |VendingMachine
 clk => StateMachine:state_machine.clk
-SW[0] => StateMachine:state_machine.nickel_in
-SW[1] => StateMachine:state_machine.dime_in
-SW[2] => StateMachine:state_machine.quarter_in
-KEY[0] => ~NO_FANOUT~
+SW[0] => StateMachine:state_machine.coin[0]
+SW[1] => StateMachine:state_machine.coin[1]
+KEY[0] => StateMachine:state_machine.tss
 KEY[1] => StateMachine:state_machine.rst
 HEX0[0] <= DisplayDecimal:display0.HEX[0]
 HEX0[1] <= DisplayDecimal:display0.HEX[1]
@@ -52,19 +51,10 @@ HEX5[6] <= DisplayDecimal:display5.HEX[6]
 |VendingMachine|StateMachine:state_machine
 clk => present_state_signal~1.DATAIN
 rst => present_state_signal~3.DATAIN
-nickel_in => next_state_signal.OUTPUTSELECT
-nickel_in => next_state_signal.OUTPUTSELECT
-nickel_in => next_state_signal.OUTPUTSELECT
-nickel_in => Selector4.IN4
-nickel_in => Selector5.IN5
-nickel_in => Selector6.IN4
-nickel_in => Selector7.IN4
-nickel_in => Selector8.IN5
-dime_in => next_state_signal.OUTPUTSELECT
-dime_in => next_state_signal.OUTPUTSELECT
-dime_in => next_state_signal.DATAA
-quarter_in => next_state_signal.DATAA
-quarter_in => next_state_signal.DATAA
+tss => toss_coin[1].OUTPUTSELECT
+tss => toss_coin[0].OUTPUTSELECT
+coin[0] => toss_coin[0].DATAB
+coin[1] => toss_coin[1].DATAB
 present_state.st0 <= present_state.st0.DB_MAX_OUTPUT_PORT_TYPE
 present_state.st5 <= present_state.st5.DB_MAX_OUTPUT_PORT_TYPE
 present_state.st10 <= present_state.st10.DB_MAX_OUTPUT_PORT_TYPE

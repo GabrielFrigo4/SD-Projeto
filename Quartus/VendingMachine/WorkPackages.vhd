@@ -5,11 +5,11 @@ package vending_machine is
 	type state is (st0, st5, st10, st15, st20, st25, st30, st35, st40, st45, stcandy);
 	component StateMachine is
 		port(
-			clk, rst						: in std_logic;
-			nickel_in, dime_in, quarter_in	: in std_logic;
-			present_state					: out state;
-			candy_out						: out std_logic;
-			nickel_out, dime_out			: out std_logic_vector(1 downto 0)
+			clk, rst, tss							: in std_logic;
+			coin										: in std_logic_vector(1 downto 0);
+			present_state							: out state;
+			candy_out								: out std_logic;
+			nickel_out, dime_out					: out std_logic_vector(1 downto 0)
 		);
 	end component;
 end package;

@@ -2,40 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'StateMachine:state_machine|present_state_signal.st25'
+Slack : -2.412
+TNS   : -9.374
+
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -0.764
-TNS   : -4.512
+Slack : -1.771
+TNS   : -10.217
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
 Slack : 0.347
 TNS   : 0.000
 
+Type  : Slow 1200mV 85C Model Hold 'StateMachine:state_machine|present_state_signal.st25'
+Slack : 0.649
+TNS   : 0.000
+
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -18.433
+TNS   : -17.030
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'StateMachine:state_machine|present_state_signal.st25'
+Slack : 0.370
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'StateMachine:state_machine|present_state_signal.st25'
+Slack : -2.116
+TNS   : -8.235
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -0.627
-TNS   : -3.287
+Slack : -1.558
+TNS   : -8.657
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
 Slack : 0.312
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'StateMachine:state_machine|present_state_signal.st25'
+Slack : 0.595
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -18.433
+TNS   : -17.030
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'StateMachine:state_machine|present_state_signal.st25'
+Slack : 0.410
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'StateMachine:state_machine|present_state_signal.st25'
+Slack : -0.531
+TNS   : -1.970
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : 0.268
-TNS   : 0.000
+Slack : -0.181
+TNS   : -0.437
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
 Slack : 0.152
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Hold 'StateMachine:state_machine|present_state_signal.st25'
+Slack : 0.251
+TNS   : 0.000
+
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -14.300
+TNS   : -13.224
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'StateMachine:state_machine|present_state_signal.st25'
+Slack : 0.392
+TNS   : 0.000
 
 ------------------------------------------------------------
