@@ -8,7 +8,7 @@ entity VendingMachine is
 	port(
 		CLOCK_50	: in std_logic;
 		SW			: in std_logic_vector(1 downto 0); -- TODO: ver se funciona
-		KEY		: in std_logic_vector(1 downto 0);
+		KEY			: in std_logic_vector(1 downto 0);
 		HEX0		: out std_logic_vector(6 downto 0);
 		HEX1		: out std_logic_vector(6 downto 0);
 		HEX2		: out std_logic_vector(6 downto 0);
@@ -31,7 +31,7 @@ begin
 			clk				=> CLOCK_50,
 			rst				=> not KEY(1),
 			tss				=> not KEY(0),
-			coin				=> SW,
+			coin			=> SW,
 			present_state	=> present_state,
 			candy_out		=> candy_out,
 			nickel_out		=> nickel_out,
@@ -39,24 +39,24 @@ begin
 			led				=> LEDR
 		);
 
-	-- Display do docinho
-	display0 : component DisplayDecimal
+	-- Display nao utilizado (DEBUG)
+	display5 : component DisplayHexadecimal
 		port map(
-			EN	=> '1',
-			DIG	=> candy_out_dig,
+			EN	=> '0',
+			DIG	=> "0" & SW(1) & SW(0) & CLK_50MHZ,
 			HEX	=> HEX5
 		);
 
-	-- Display nao utilizado
-	display1 : component DisplayDecimal
+	-- Display do docinho
+	display4 : component DisplayDecimal
 		port map(
-			EN	=> '0',
-			DIG	=> "0000",
+			EN	=> '1',
+			DIG	=> candy_out_dig,
 			HEX	=> HEX4
 		);
 
 	-- Display das moedas inseridas (parte decimal)
-	display2 : component DisplayDecimal
+	display3 : component DisplayDecimal
 		port map(
 			EN	=> '1',
 			DIG	=> present_state_dig1,
@@ -64,7 +64,7 @@ begin
 		);
 
 	-- Display das moedas inseridas (parte unitaria)
-	display3 : component DisplayDecimal
+	display2 : component DisplayDecimal
 		port map(
 			EN	=> '1',
 			DIG	=> present_state_dig0,
@@ -72,7 +72,7 @@ begin
 		);
 
 	-- Display do numero de dimes devolvidos
-	display4 : component DisplayDecimal
+	display1 : component DisplayDecimal
 		port map(
 			EN	=> '1',
 			DIG	=> "00" & dime_out,
@@ -80,7 +80,7 @@ begin
 		);
 
 	-- Display do numero de nickels devolvidos
-	display5 : component DisplayDecimal
+	display0 : component DisplayDecimal
 		port map(
 			EN	=> '1',
 			DIG	=> "00" & nickel_out,

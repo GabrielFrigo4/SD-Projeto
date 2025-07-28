@@ -1,14 +1,14 @@
 
-State Machine - |VendingMachine|StateMachine:state_machine|present_state_signal
-Name present_state_signal.stcandy present_state_signal.st45 present_state_signal.st40 present_state_signal.st35 present_state_signal.st30 present_state_signal.st25 present_state_signal.st20 present_state_signal.st15 present_state_signal.st10 present_state_signal.st5 present_state_signal.st0 
-present_state_signal.st0 0 0 0 0 0 0 0 0 0 0 0 
-present_state_signal.st5 0 0 0 0 0 0 0 0 0 1 1 
-present_state_signal.st10 0 0 0 0 0 0 0 0 1 0 1 
-present_state_signal.st15 0 0 0 0 0 0 0 1 0 0 1 
-present_state_signal.st20 0 0 0 0 0 0 1 0 0 0 1 
-present_state_signal.st25 0 0 0 0 0 1 0 0 0 0 1 
-present_state_signal.st30 0 0 0 0 1 0 0 0 0 0 1 
-present_state_signal.st35 0 0 0 1 0 0 0 0 0 0 1 
-present_state_signal.st40 0 0 1 0 0 0 0 0 0 0 1 
-present_state_signal.st45 0 1 0 0 0 0 0 0 0 0 1 
-present_state_signal.stcandy 1 0 0 0 0 0 0 0 0 0 1 
+State Machine - |VendingMachine|StateMachine:state_machine0|current_state_reg
+Name current_state_reg.stcandy current_state_reg.st45 current_state_reg.st40 current_state_reg.st35 current_state_reg.st30 current_state_reg.st25 current_state_reg.st20 current_state_reg.st15 current_state_reg.st10 current_state_reg.st5 current_state_reg.st0 
+current_state_reg.st0 0 0 0 0 0 0 0 0 0 0 0 
+current_state_reg.st5 0 0 0 0 0 0 0 0 0 1 1 
+current_state_reg.st10 0 0 0 0 0 0 0 0 1 0 1 
+current_state_reg.st15 0 0 0 0 0 0 0 1 0 0 1 
+current_state_reg.st20 0 0 0 0 0 0 1 0 0 0 1 
+current_state_reg.st25 0 0 0 0 0 1 0 0 0 0 1 
+current_state_reg.st30 0 0 0 0 1 0 0 0 0 0 1 
+current_state_reg.st35 0 0 0 1 0 0 0 0 0 0 1 
+current_state_reg.st40 0 0 1 0 0 0 0 0 0 0 1 
+current_state_reg.st45 0 1 0 0 0 0 0 0 0 0 1 
+current_state_reg.stcandy 1 0 0 0 0 0 0 0 0 0 1 
