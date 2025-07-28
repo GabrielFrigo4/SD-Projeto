@@ -5,12 +5,12 @@ use work.vending_machine.all;
 
 entity StateMachine is
 	port(
-		clk, rst, tss							: in std_logic;
-		coin										: in std_logic_vector(1 downto 0); -- 01 nickel, 10 dime, 11 quarter, 00 inválido
-		present_state							: out state;
-		candy_out								: out std_logic;
-		nickel_out, dime_out					: out std_logic_vector(1 downto 0); -- Quantidade de cada moeda no troco
-		led										: out std_logic_vector(2 downto 0)
+		clk, rst, tss			: in std_logic;
+		coin						: in std_logic_vector(1 downto 0); -- 01 nickel, 10 dime, 11 quarter, 00 inválido
+		present_state			: out state;
+		candy_out				: out std_logic;
+		nickel_out, dime_out	: out std_logic_vector(1 downto 0); -- Quantidade de cada moeda no troco
+		led						: out std_logic_vector(2 downto 0)
 	);
 end StateMachine;
 

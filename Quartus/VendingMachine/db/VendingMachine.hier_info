@@ -1,6 +1,5 @@
 |VendingMachine
-CLK_50MHZ => StateMachine:state_machine0.clk
-CLK_50MHZ => DisplayHexadecimal:display5.DIG[0]
+CLOCK_50 => Clock:clock0.CLK_IN
 SW[0] => StateMachine:state_machine0.coin[0]
 SW[0] => DisplayHexadecimal:display5.DIG[1]
 SW[1] => StateMachine:state_machine0.coin[1]
@@ -49,25 +48,28 @@ HEX5[3] <= DisplayHexadecimal:display5.HEX[3]
 HEX5[4] <= DisplayHexadecimal:display5.HEX[4]
 HEX5[5] <= DisplayHexadecimal:display5.HEX[5]
 HEX5[6] <= DisplayHexadecimal:display5.HEX[6]
+LEDR[0] <= StateMachine:state_machine0.led[0]
+LEDR[1] <= StateMachine:state_machine0.led[1]
+LEDR[2] <= StateMachine:state_machine0.led[2]
+
+
+|VendingMachine|Clock:clock0
+CLK_IN => CLK_OUT.DATAIN
+CLK_OUT <= CLK_IN.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VendingMachine|StateMachine:state_machine0
-clk => dime_out_reg[0].CLK
-clk => dime_out_reg[1].CLK
-clk => nickel_out_reg[0].CLK
-clk => nickel_out_reg[1].CLK
-clk => candy_out_reg.CLK
-clk => current_state_reg~1.DATAIN
-rst => dime_out_reg[0].ACLR
-rst => dime_out_reg[1].ACLR
-rst => nickel_out_reg[0].ACLR
-rst => nickel_out_reg[1].ACLR
-rst => candy_out_reg.ACLR
-rst => current_state_reg~3.DATAIN
+clk => present_state_signal~1.DATAIN
+rst => present_state_signal~3.DATAIN
 tss => toss_coin[1].OUTPUTSELECT
 tss => toss_coin[0].OUTPUTSELECT
+tss => led.OUTPUTSELECT
+tss => led.OUTPUTSELECT
+tss => led[2].DATAIN
 coin[0] => toss_coin[0].DATAB
+coin[0] => led.DATAB
 coin[1] => toss_coin[1].DATAB
+coin[1] => led.DATAB
 present_state.st0 <= present_state.st0.DB_MAX_OUTPUT_PORT_TYPE
 present_state.st5 <= present_state.st5.DB_MAX_OUTPUT_PORT_TYPE
 present_state.st10 <= present_state.st10.DB_MAX_OUTPUT_PORT_TYPE
@@ -79,11 +81,14 @@ present_state.st35 <= present_state.st35.DB_MAX_OUTPUT_PORT_TYPE
 present_state.st40 <= present_state.st40.DB_MAX_OUTPUT_PORT_TYPE
 present_state.st45 <= present_state.st45.DB_MAX_OUTPUT_PORT_TYPE
 present_state.stcandy <= present_state.stcandy.DB_MAX_OUTPUT_PORT_TYPE
-candy_out <= candy_out_reg.DB_MAX_OUTPUT_PORT_TYPE
-nickel_out[0] <= nickel_out_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-nickel_out[1] <= nickel_out_reg[1].DB_MAX_OUTPUT_PORT_TYPE
-dime_out[0] <= dime_out_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-dime_out[1] <= dime_out_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+candy_out <= candy_out.DB_MAX_OUTPUT_PORT_TYPE
+nickel_out[0] <= nickel_out_signal[0].DB_MAX_OUTPUT_PORT_TYPE
+nickel_out[1] <= nickel_out_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+dime_out[0] <= dime_out_signal[0].DB_MAX_OUTPUT_PORT_TYPE
+dime_out[1] <= dime_out_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+led[0] <= led.DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= led.DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= tss.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VendingMachine|DisplayHexadecimal:display5

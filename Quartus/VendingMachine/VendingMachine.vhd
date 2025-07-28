@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.clock_system.all;
 use work.vending_machine.all;
 use work.display_segment.all;
 
@@ -8,7 +9,7 @@ entity VendingMachine is
 	port(
 		CLOCK_50	: in std_logic;
 		SW			: in std_logic_vector(1 downto 0); -- TODO: ver se funciona
-		KEY			: in std_logic_vector(1 downto 0);
+		KEY		: in std_logic_vector(1 downto 0);
 		HEX0		: out std_logic_vector(6 downto 0);
 		HEX1		: out std_logic_vector(6 downto 0);
 		HEX2		: out std_logic_vector(6 downto 0);
@@ -20,18 +21,27 @@ entity VendingMachine is
 end VendingMachine;
 
 architecture VendingMachine_ARCH of VendingMachine is
+	signal clk													: std_logic;
 	signal present_state										: state;
 	signal candy_out											: std_logic;
 	signal nickel_out, dime_out							: std_logic_vector(1 downto 0);
 	signal present_state_dig0, present_state_dig1	: std_logic_vector(3 downto 0);
 	signal candy_out_dig										: std_logic_vector(3 downto 0);
 begin
-	state_machine : component StateMachine
+	-- Clock
+	clock0 : component Clock
 		port map(
-			clk				=> CLOCK_50,
+			CLK_IN	=> CLOCK_50,
+			CLK_OUT	=> clk
+		);
+
+	-- State Machine
+	state_machine0 : component StateMachine
+		port map(
+			clk				=> clk,
 			rst				=> not KEY(1),
 			tss				=> not KEY(0),
-			coin			=> SW,
+			coin				=> SW,
 			present_state	=> present_state,
 			candy_out		=> candy_out,
 			nickel_out		=> nickel_out,
@@ -43,7 +53,7 @@ begin
 	display5 : component DisplayHexadecimal
 		port map(
 			EN	=> '0',
-			DIG	=> "0" & SW(1) & SW(0) & CLK_50MHZ,
+			DIG	=> "0" & SW(1) & SW(0) & clk,
 			HEX	=> HEX5
 		);
 
