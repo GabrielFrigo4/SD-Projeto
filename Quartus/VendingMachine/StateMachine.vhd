@@ -9,13 +9,14 @@ entity StateMachine is
 		coin										: in std_logic_vector(1 downto 0); -- 01 nickel, 10 dime, 11 quarter, 00 inválido
 		present_state							: out state;
 		candy_out								: out std_logic;
-		nickel_out, dime_out					: out std_logic_vector(1 downto 0) -- Quantidade de cada moeda no troco
+		nickel_out, dime_out					: out std_logic_vector(1 downto 0); -- Quantidade de cada moeda no troco
+		led										: out std_logic_vector(2 downto 0)
 	);
 end StateMachine;
 
 architecture StateMachine_ARCH of StateMachine is
 	signal present_state_signal, next_state_signal	: state;
-	signal toss_coin											: std_logic_vector(1 downto 0);
+	signal toss_coin											: std_logic_vector(1 downto 0) := "00";
 	signal nickel_out_signal, dime_out_signal			: std_logic_vector(1 downto 0) := "00";
 begin
 	present_state <= present_state_signal;
@@ -27,10 +28,11 @@ begin
 	begin
 		if (tss = '1') then
 			toss_coin <= coin;
+			led <= tss & coin;
 		else
 			toss_coin <= "00";
+			led <= "000";
 		end if;
-		
 		if (rst = '1') then
 			present_state_signal <= st0;
 		elsif (clk'event and clk = '1') then
@@ -114,38 +116,38 @@ begin
 
 			when st25 =>
 				candy_out <= '0'; -- Agora e 1 somente no stcandy
-				nickel_out_signal <= nickel_out_signal;
-				dime_out_signal <= dime_out_signal;
+				nickel_out_signal <= std_logic_vector(unsigned(nickel_out_signal));
+				dime_out_signal <= std_logic_vector(unsigned(dime_out_signal));
 				next_state_signal <= stcandy;
 
 			when st30 =>
 				candy_out <= '0'; -- Agora e 1 somente no stcandy
 				nickel_out_signal <= std_logic_vector(unsigned(nickel_out_signal) + 1);
-				dime_out_signal <= dime_out_signal;
+				dime_out_signal <= std_logic_vector(unsigned(dime_out_signal));
 				next_state_signal <= stcandy;
 
 			when st35 =>
 				candy_out <= '0'; -- Agora e 1 somente no stcandy
-				nickel_out_signal <= nickel_out_signal;
+				nickel_out_signal <= std_logic_vector(unsigned(nickel_out_signal));
 				dime_out_signal <= std_logic_vector(unsigned(dime_out_signal) + 1);
 				next_state_signal <= stcandy;
 
 			when st40 =>
 				candy_out <= '0';
 				nickel_out_signal <= std_logic_vector(unsigned(nickel_out_signal) + 1);
-				dime_out_signal <= dime_out_signal;
+				dime_out_signal <= std_logic_vector(unsigned(dime_out_signal));
 				next_state_signal <= st35;
 
 			when st45 =>
 				candy_out <= '0';
-				nickel_out_signal <= nickel_out_signal;
+				nickel_out_signal <= std_logic_vector(unsigned(nickel_out_signal));
 				dime_out_signal <= std_logic_vector(unsigned(dime_out_signal) + 1);
 				next_state_signal <= st35;
 
 			when stcandy =>
 				candy_out <= '1';
-				nickel_out_signal <= nickel_out_signal;
-				dime_out_signal <= dime_out_signal;
+				nickel_out_signal <= std_logic_vector(unsigned(nickel_out_signal));
+				dime_out_signal <= std_logic_vector(unsigned(dime_out_signal));
 				if (toss_coin = "01") then
 					next_state_signal <= st5;
 				elsif (toss_coin = "10") then

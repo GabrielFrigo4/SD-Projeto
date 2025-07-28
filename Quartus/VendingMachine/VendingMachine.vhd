@@ -6,15 +6,16 @@ use work.display_segment.all;
 
 entity VendingMachine is
 	port(
-		clk	: in std_logic;
-		SW		: in std_logic_vector(1 downto 0); -- TODO: ver se funciona
-		KEY	: in std_logic_vector(1 downto 0);
-		HEX0	: out std_logic_vector(6 downto 0);
-		HEX1	: out std_logic_vector(6 downto 0);
-		HEX2	: out std_logic_vector(6 downto 0);
-		HEX3	: out std_logic_vector(6 downto 0);
-		HEX4	: out std_logic_vector(6 downto 0);
-		HEX5	: out std_logic_vector(6 downto 0)
+		CLOCK_50	: in std_logic;
+		SW			: in std_logic_vector(1 downto 0); -- TODO: ver se funciona
+		KEY		: in std_logic_vector(1 downto 0);
+		HEX0		: out std_logic_vector(6 downto 0);
+		HEX1		: out std_logic_vector(6 downto 0);
+		HEX2		: out std_logic_vector(6 downto 0);
+		HEX3		: out std_logic_vector(6 downto 0);
+		HEX4		: out std_logic_vector(6 downto 0);
+		HEX5		: out std_logic_vector(6 downto 0);
+		LEDR		: out std_logic_vector(2 downto 0)
 	);
 end VendingMachine;
 
@@ -27,14 +28,15 @@ architecture VendingMachine_ARCH of VendingMachine is
 begin
 	state_machine : component StateMachine
 		port map(
-			clk				=> clk,
-			rst				=> KEY(1), -- TODO: ver se nao e not aqui
-			tss				=> KEY(0),
+			clk				=> CLOCK_50,
+			rst				=> not KEY(1),
+			tss				=> not KEY(0),
 			coin				=> SW,
 			present_state	=> present_state,
 			candy_out		=> candy_out,
 			nickel_out		=> nickel_out,
-			dime_out 		=> dime_out
+			dime_out 		=> dime_out,
+			led				=> LEDR
 		);
 
 	-- Display do docinho
@@ -42,7 +44,7 @@ begin
 		port map(
 			EN	=> '1',
 			DIG	=> candy_out_dig,
-			HEX	=> HEX0
+			HEX	=> HEX5
 		);
 
 	-- Display nao utilizado
@@ -50,7 +52,7 @@ begin
 		port map(
 			EN	=> '0',
 			DIG	=> "0000",
-			HEX	=> HEX1
+			HEX	=> HEX4
 		);
 
 	-- Display das moedas inseridas (parte decimal)
@@ -58,7 +60,7 @@ begin
 		port map(
 			EN	=> '1',
 			DIG	=> present_state_dig1,
-			HEX	=> HEX2
+			HEX	=> HEX3
 		);
 
 	-- Display das moedas inseridas (parte unitaria)
@@ -66,7 +68,7 @@ begin
 		port map(
 			EN	=> '1',
 			DIG	=> present_state_dig0,
-			HEX	=> HEX3
+			HEX	=> HEX2
 		);
 
 	-- Display do numero de dimes devolvidos
@@ -74,7 +76,7 @@ begin
 		port map(
 			EN	=> '1',
 			DIG	=> "00" & dime_out,
-			HEX	=> HEX4
+			HEX	=> HEX1
 		);
 
 	-- Display do numero de nickels devolvidos
@@ -82,7 +84,7 @@ begin
 		port map(
 			EN	=> '1',
 			DIG	=> "00" & nickel_out,
-			HEX	=> HEX5
+			HEX	=> HEX0
 		);
 
 	with present_state select
