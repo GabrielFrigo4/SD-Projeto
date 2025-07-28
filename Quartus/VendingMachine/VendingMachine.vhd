@@ -39,7 +39,7 @@ begin
 		);
 
 	-- Display nao utilizado
-	display0 : component DisplayDecimal
+	display5 : component DisplayDecimal
 		port map(
 			EN	=> '0',
 			DIG	=> "0000",
@@ -47,7 +47,7 @@ begin
 		);
 
 	-- Display do docinho
-	display1 : component DisplayDecimal
+	display4 : component DisplayDecimal
 		port map(
 			EN	=> '1',
 			DIG	=> candy_out_dig,
@@ -55,7 +55,7 @@ begin
 		);
 
 	-- Display das moedas inseridas (parte decimal)
-	display2 : component DisplayDecimal
+	display3 : component DisplayDecimal
 		port map(
 			EN	=> '1',
 			DIG	=> present_state_dig1,
@@ -63,7 +63,7 @@ begin
 		);
 
 	-- Display das moedas inseridas (parte unitaria)
-	display3 : component DisplayDecimal
+	display2 : component DisplayDecimal
 		port map(
 			EN	=> '1',
 			DIG	=> present_state_dig0,
@@ -71,7 +71,7 @@ begin
 		);
 
 	-- Display do numero de dimes devolvidos
-	display4 : component DisplayDecimal
+	display1 : component DisplayDecimal
 		port map(
 			EN	=> '1',
 			DIG	=> "00" & dime_out,
@@ -79,7 +79,7 @@ begin
 		);
 
 	-- Display do numero de nickels devolvidos
-	display5 : component DisplayDecimal
+	display0 : component DisplayDecimal
 		port map(
 			EN	=> '1',
 			DIG	=> "00" & nickel_out,
