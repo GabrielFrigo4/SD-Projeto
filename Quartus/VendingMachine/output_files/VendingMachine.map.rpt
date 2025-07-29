@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VendingMachine
-Mon Jul 28 22:25:20 2025
+Mon Jul 28 22:32:07 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -53,7 +53,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 28 22:25:20 2025           ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul 28 22:32:07 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; VendingMachine                                  ;
 ; Top-level Entity Name              ; VendingMachine                                  ;
@@ -163,30 +163,30 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 32          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 10          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 10          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processors 2-10        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                  ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                           ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
-; VendingMachine.vhd               ; yes             ; User VHDL File  ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd     ;         ;
-; WorkPackages.vhd                 ; yes             ; User VHDL File  ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd       ;         ;
-; DisplayDecimal.vhd               ; yes             ; User VHDL File  ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd     ;         ;
-; DisplayHexadecimal.vhd           ; yes             ; User VHDL File  ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayHexadecimal.vhd ;         ;
-; StateMachine.vhd                 ; yes             ; User VHDL File  ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd       ;         ;
-; Clock.vhd                        ; yes             ; User VHDL File  ; /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/Clock.vhd              ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+; VendingMachine.vhd               ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd     ;         ;
+; WorkPackages.vhd                 ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd       ;         ;
+; DisplayDecimal.vhd               ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd     ;         ;
+; DisplayHexadecimal.vhd           ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayHexadecimal.vhd ;         ;
+; StateMachine.vhd                 ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd       ;         ;
+; Clock.vhd                        ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/Clock.vhd              ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -403,91 +403,91 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Mon Jul 28 22:25:13 2025
+    Info: Processing started: Mon Jul 28 22:32:02 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VendingMachine -c VendingMachine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file VendingMachine.vhd
-    Info (12022): Found design unit 1: VendingMachine-VendingMachine_ARCH File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 23
-    Info (12023): Found entity 1: VendingMachine File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 8
+    Info (12022): Found design unit 1: VendingMachine-VendingMachine_ARCH File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 23
+    Info (12023): Found entity 1: VendingMachine File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 8
 Info (12021): Found 6 design units, including 0 entities, in source file WorkPackages.vhd
-    Info (12022): Found design unit 1: clock_system File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 4
-    Info (12022): Found design unit 2: clock_system-body File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 13
-    Info (12022): Found design unit 3: vending_machine File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 19
-    Info (12022): Found design unit 4: vending_machine-body File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 33
-    Info (12022): Found design unit 5: display_segment File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 39
-    Info (12022): Found design unit 6: display_segment-body File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 56
+    Info (12022): Found design unit 1: clock_system File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 4
+    Info (12022): Found design unit 2: clock_system-body File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 13
+    Info (12022): Found design unit 3: vending_machine File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 19
+    Info (12022): Found design unit 4: vending_machine-body File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 33
+    Info (12022): Found design unit 5: display_segment File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 39
+    Info (12022): Found design unit 6: display_segment-body File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 56
 Info (12021): Found 2 design units, including 1 entities, in source file DisplayDecimal.vhd
-    Info (12022): Found design unit 1: DisplayDecimal-DisplayDecimal_ARCH File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd Line: 12
-    Info (12023): Found entity 1: DisplayDecimal File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd Line: 4
+    Info (12022): Found design unit 1: DisplayDecimal-DisplayDecimal_ARCH File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd Line: 12
+    Info (12023): Found entity 1: DisplayDecimal File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file DisplayHexadecimal.vhd
-    Info (12022): Found design unit 1: DisplayHexadecimal-DisplayHexadecimal_ARCH File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayHexadecimal.vhd Line: 12
-    Info (12023): Found entity 1: DisplayHexadecimal File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayHexadecimal.vhd Line: 4
+    Info (12022): Found design unit 1: DisplayHexadecimal-DisplayHexadecimal_ARCH File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayHexadecimal.vhd Line: 12
+    Info (12023): Found entity 1: DisplayHexadecimal File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayHexadecimal.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file StateMachine.vhd
-    Info (12022): Found design unit 1: StateMachine-StateMachine_ARCH File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 17
-    Info (12023): Found entity 1: StateMachine File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 6
+    Info (12022): Found design unit 1: StateMachine-StateMachine_ARCH File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 17
+    Info (12023): Found entity 1: StateMachine File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file Clock.vhd
-    Info (12022): Found design unit 1: Clock-Clock_ARCH File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/Clock.vhd Line: 11
-    Info (12023): Found entity 1: Clock File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/Clock.vhd Line: 4
+    Info (12022): Found design unit 1: Clock-Clock_ARCH File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/Clock.vhd Line: 11
+    Info (12023): Found entity 1: Clock File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/Clock.vhd Line: 4
 Info (12127): Elaborating entity "VendingMachine" for the top level hierarchy
-Info (12128): Elaborating entity "Clock" for hierarchy "Clock:clock0" File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 32
-Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:state_machine0" File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 39
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(123): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 123
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(124): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 124
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(129): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 129
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(130): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 130
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(135): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 135
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(136): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 136
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(141): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 141
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(142): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 142
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(147): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 147
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(148): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 148
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(169): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 169
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(170): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 170
-Warning (10631): VHDL Process Statement warning at StateMachine.vhd(48): inferring latch(es) for signal or variable "nickel_out_signal", which holds its previous value in one or more paths through the process File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at StateMachine.vhd(48): inferring latch(es) for signal or variable "dime_out_signal", which holds its previous value in one or more paths through the process File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "dime_out_signal[0]" at StateMachine.vhd(48) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "dime_out_signal[1]" at StateMachine.vhd(48) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "dime_out_signal[2]" at StateMachine.vhd(48) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "dime_out_signal[3]" at StateMachine.vhd(48) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "nickel_out_signal[0]" at StateMachine.vhd(48) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "nickel_out_signal[1]" at StateMachine.vhd(48) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "nickel_out_signal[2]" at StateMachine.vhd(48) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "nickel_out_signal[3]" at StateMachine.vhd(48) File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (12128): Elaborating entity "DisplayHexadecimal" for hierarchy "DisplayHexadecimal:display5" File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 53
-Info (12128): Elaborating entity "DisplayDecimal" for hierarchy "DisplayDecimal:display4" File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 61
-Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[0] has unsafe behavior File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[1] has unsafe behavior File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[2] has unsafe behavior File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[3] has unsafe behavior File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[0] has unsafe behavior File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[1] has unsafe behavior File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[2] has unsafe behavior File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[3] has unsafe behavior File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
+Info (12128): Elaborating entity "Clock" for hierarchy "Clock:clock0" File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 32
+Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:state_machine0" File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(123): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(124): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(129): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(130): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 130
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(135): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 135
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(136): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 136
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(141): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 141
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(142): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(147): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(148): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 148
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(169): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(170): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 170
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(48): inferring latch(es) for signal or variable "nickel_out_signal", which holds its previous value in one or more paths through the process File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(48): inferring latch(es) for signal or variable "dime_out_signal", which holds its previous value in one or more paths through the process File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+Info (10041): Inferred latch for "dime_out_signal[0]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+Info (10041): Inferred latch for "dime_out_signal[1]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+Info (10041): Inferred latch for "dime_out_signal[2]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+Info (10041): Inferred latch for "dime_out_signal[3]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+Info (10041): Inferred latch for "nickel_out_signal[0]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+Info (10041): Inferred latch for "nickel_out_signal[1]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+Info (10041): Inferred latch for "nickel_out_signal[2]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+Info (10041): Inferred latch for "nickel_out_signal[3]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+Info (12128): Elaborating entity "DisplayHexadecimal" for hierarchy "DisplayHexadecimal:display5" File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 53
+Info (12128): Elaborating entity "DisplayDecimal" for hierarchy "DisplayDecimal:display4" File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 61
+Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[0] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
+Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[1] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
+Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[2] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
+Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[3] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
+Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[0] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
+Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[1] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
+Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[2] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
+Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[3] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 16
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 17
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 17
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 17
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/anthony/Documents/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 16
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 17
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 17
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 17
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 185 assignments for entity "DE10_Lite" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[0] -entity DE10_Lite was ignored
@@ -682,9 +682,9 @@ Info (21057): Implemented 125 device resources after synthesis - the final resou
     Info (21059): Implemented 45 output pins
     Info (21061): Implemented 75 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 233 warnings
-    Info: Peak virtual memory: 511 megabytes
-    Info: Processing ended: Mon Jul 28 22:25:20 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Peak virtual memory: 475 megabytes
+    Info: Processing ended: Mon Jul 28 22:32:07 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:12
 
 

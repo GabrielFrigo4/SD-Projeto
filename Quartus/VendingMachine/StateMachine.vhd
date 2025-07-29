@@ -6,7 +6,7 @@ use work.vending_machine.all;
 entity StateMachine is
 	port(
 		clk, rst, tss			: in std_logic;
-		coin						: in std_logic_vector(1 downto 0); -- 01 nickel, 10 dime, 11 quarter, 00 inválido
+		coin					: in std_logic_vector(1 downto 0); -- 01 nickel, 10 dime, 11 quarter, 00 inválido
 		present_state			: out state;
 		candy_out				: out std_logic;
 		nickel_out, dime_out	: out std_logic_vector(3 downto 0); -- Quantidade de cada moeda no troco
@@ -16,9 +16,9 @@ end StateMachine;
 
 architecture StateMachine_ARCH of StateMachine is
 	signal present_state_signal, next_state_signal	: state;
-	signal tss_prev 											: std_logic := '0';
-	signal toss_coin											: std_logic_vector(1 downto 0) := "00";
-	signal nickel_out_signal, dime_out_signal			: std_logic_vector(3 downto 0) := "0000";
+	signal tss_prev 								: std_logic := '0';
+	signal toss_coin								: std_logic_vector(1 downto 0) := "00";
+	signal nickel_out_signal, dime_out_signal		: std_logic_vector(3 downto 0) := "0000";
 begin
 	present_state <= present_state_signal;
 	nickel_out <= nickel_out_signal;

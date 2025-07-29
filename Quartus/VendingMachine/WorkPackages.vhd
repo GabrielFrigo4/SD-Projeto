@@ -21,7 +21,7 @@ package vending_machine is
 	component StateMachine is
 		port(
 			clk, rst, tss			: in std_logic;
-			coin						: in std_logic_vector(1 downto 0);
+			coin					: in std_logic_vector(1 downto 0);
 			present_state			: out state;
 			candy_out				: out std_logic;
 			nickel_out, dime_out	: out std_logic_vector(3 downto 0);
