@@ -2,76 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -1.797
-TNS   : -8.873
-
 Type  : Slow 1200mV 85C Model Setup 'StateMachine:state_machine0|present_state_signal.st25'
-Slack : -1.431
-TNS   : -5.414
+Slack : -2.029
+TNS   : -15.323
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -1.723
+TNS   : -16.941
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.348
+Slack : 0.347
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'StateMachine:state_machine0|present_state_signal.st25'
-Slack : 0.552
+Slack : 0.569
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -18.433
+TNS   : -26.851
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'StateMachine:state_machine0|present_state_signal.st25'
-Slack : 0.393
+Slack : 0.415
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -1.527
-TNS   : -7.414
-
 Type  : Slow 1200mV 0C Model Setup 'StateMachine:state_machine0|present_state_signal.st25'
-Slack : -1.224
-TNS   : -4.576
+Slack : -1.793
+TNS   : -13.535
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.468
+TNS   : -14.149
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
 Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'StateMachine:state_machine0|present_state_signal.st25'
-Slack : 0.502
+Slack : 0.580
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -18.433
+TNS   : -26.851
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'StateMachine:state_machine0|present_state_signal.st25'
-Slack : 0.420
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -0.863
-TNS   : -1.176
+Slack : -0.640
+TNS   : -1.468
 
 Type  : Fast 1200mV 0C Model Setup 'StateMachine:state_machine0|present_state_signal.st25'
-Slack : -0.072
-TNS   : -0.134
+Slack : -0.310
+TNS   : -2.081
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.145
+Slack : 0.112
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'StateMachine:state_machine0|present_state_signal.st25'
-Slack : 0.218
+Slack : 0.124
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -14.207
+TNS   : -20.350
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'StateMachine:state_machine0|present_state_signal.st25'
-Slack : 0.325
+Slack : 0.435
 TNS   : 0.000
 
 ------------------------------------------------------------

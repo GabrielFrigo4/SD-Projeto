@@ -1,0 +1,378 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/anthony/Documents/UFABC/SD-Projeto
+Eclock
+Z1 w1753745488
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 4
+R0
+Z4 8Quartus/VendingMachine/Clock.vhd
+Z5 FQuartus/VendingMachine/Clock.vhd
+l0
+L4 1
+VOYl^IoaJBWlm1=z4PcLTH1
+!s100 U0eF:BKDhG@;mhdm7V;`o3
+Z6 OL;C;2024.3;79
+32
+Z7 !s110 1753748530
+!i10b 1
+Z8 !s108 1753748530.000000
+Z9 !s90 Quartus/VendingMachine/Clock.vhd|
+Z10 !s107 Quartus/VendingMachine/Clock.vhd|
+!i113 0
+Z11 tExplicit 1 CvgOpt 0
+Aclock_arch
+R2
+R3
+DEx4 work 5 clock 0 22 OYl^IoaJBWlm1=z4PcLTH1
+!i122 4
+l12
+L11 4
+VeNcSi>Qm5@]Wi?H6V=@]W1
+!s100 0g]PIBgV^2KfMIeaz0KHY3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 0
+R11
+Pclock_system
+R2
+R3
+!i122 5
+R1
+R0
+Z12 8Quartus/VendingMachine/WorkPackages.vhd
+Z13 FQuartus/VendingMachine/WorkPackages.vhd
+l0
+L4 8
+V=[5ZoK3dXMVMWfQIMik6H3
+!s100 2=4VcHU@Z6l_HOF4ON^aI0
+R6
+32
+Z14 !s110 1753748542
+!i10b 1
+Z15 !s108 1753748542.000000
+Z16 !s90 Quartus/VendingMachine/WorkPackages.vhd|
+Z17 !s107 Quartus/VendingMachine/WorkPackages.vhd|
+!i113 0
+R11
+Bbody
+Z18 DPx4 work 12 clock_system 0 22 =[5ZoK3dXMVMWfQIMik6H3
+R2
+R3
+!i122 5
+l0
+L13 1
+V0DkVS^bH5hHRz=hZP`FTl0
+!s100 @5T<?QQzXchH;n=iAidcW0
+R6
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R11
+Pdisplay_segment
+R2
+R3
+!i122 5
+R1
+R0
+R12
+R13
+l0
+L39 16
+V48a[hXIzQIDoEcMAP1ckH0
+!s100 GhjbzA<5`>0A3oGF?0h2:2
+R6
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R11
+Bbody
+Z19 DPx4 work 15 display_segment 0 22 48a[hXIzQIDoEcMAP1ckH0
+R2
+R3
+!i122 5
+l0
+L56 1
+V<L<DRl8:=YDKB`TWoQW;J0
+!s100 m_ed?]N`]SHGmno]JzO8=0
+R6
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R11
+Edisplaydecimal
+R1
+R2
+R3
+!i122 7
+R0
+Z20 8Quartus/VendingMachine/DisplayDecimal.vhd
+Z21 FQuartus/VendingMachine/DisplayDecimal.vhd
+l0
+L4 1
+VJ09b^a07d>Io@7YFOFYfk3
+!s100 Td[^9]=IcY6=dU>aJ]bH:0
+R6
+32
+Z22 !s110 1753748572
+!i10b 1
+Z23 !s108 1753748572.000000
+Z24 !s90 Quartus/VendingMachine/DisplayDecimal.vhd|
+Z25 !s107 Quartus/VendingMachine/DisplayDecimal.vhd|
+!i113 0
+R11
+Adisplaydecimal_arch
+R2
+R3
+DEx4 work 14 displaydecimal 0 22 J09b^a07d>Io@7YFOFYfk3
+!i122 7
+l13
+L12 23
+VX<QPL;8lgcNDdA8SXDjge3
+!s100 g49EFWi;AJ_Eg?ZlEJXj22
+R6
+32
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 0
+R11
+Edisplayhexadecimal
+R1
+R2
+R3
+!i122 8
+R0
+Z26 8Quartus/VendingMachine/DisplayHexadecimal.vhd
+Z27 FQuartus/VendingMachine/DisplayHexadecimal.vhd
+l0
+L4 1
+VgI94YL6fNmJ>lo4FzoEgz0
+!s100 0Hl>SU=gG8VM>Z38kW;0b2
+R6
+32
+Z28 !s110 1753748577
+!i10b 1
+Z29 !s108 1753748576.000000
+Z30 !s90 Quartus/VendingMachine/DisplayHexadecimal.vhd|
+Z31 !s107 Quartus/VendingMachine/DisplayHexadecimal.vhd|
+!i113 0
+R11
+Adisplayhexadecimal_arch
+R2
+R3
+DEx4 work 18 displayhexadecimal 0 22 gI94YL6fNmJ>lo4FzoEgz0
+!i122 8
+l13
+L12 28
+V0]dXdJccTdVMg_;^zA6FU3
+!s100 ghhE^[WN32z1B5@nCA:Mo1
+R6
+32
+R28
+!i10b 1
+R29
+R30
+R31
+!i113 0
+R11
+Estatemachine
+R1
+Z32 DPx4 work 15 vending_machine 0 22 fVe?k2Z2_nKGRJ?aHKlEY1
+Z33 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 9
+R0
+Z34 8Quartus/VendingMachine/StateMachine.vhd
+Z35 FQuartus/VendingMachine/StateMachine.vhd
+l0
+L6 1
+VE<bUAVaNCbU_9bBRoj4H10
+!s100 hN5lJ:[9CW>3IKDKX[:=Y1
+R6
+32
+Z36 !s110 1753748585
+!i10b 1
+Z37 !s108 1753748585.000000
+Z38 !s90 Quartus/VendingMachine/StateMachine.vhd|
+Z39 !s107 Quartus/VendingMachine/StateMachine.vhd|
+!i113 0
+R11
+Astatemachine_arch
+R32
+R33
+R2
+R3
+Z40 DEx4 work 12 statemachine 0 22 E<bUAVaNCbU_9bBRoj4H10
+!i122 9
+l21
+L17 147
+VbbM0?^Q^1iWfUS2j@dSE]3
+!s100 Ln4Yg6AzCh_[mSC?k09D01
+R6
+32
+R36
+!i10b 1
+R37
+R38
+R39
+!i113 0
+R11
+Estatemachine_tb
+Z41 w1753748369
+R32
+R33
+R2
+R3
+!i122 11
+R0
+Z42 8Quartus/VendingMachine/simulation/questa/VendingMachine.vht
+Z43 FQuartus/VendingMachine/simulation/questa/VendingMachine.vht
+l0
+L6 1
+Vj7HDG`;DY^hnin;TnJ<WW2
+!s100 ZU9g2JTH3AT;LUA0`d53e2
+R6
+32
+Z44 !s110 1753748638
+!i10b 1
+Z45 !s108 1753748638.000000
+Z46 !s90 Quartus/VendingMachine/simulation/questa/VendingMachine.vht|
+Z47 !s107 Quartus/VendingMachine/simulation/questa/VendingMachine.vht|
+!i113 0
+R11
+Abehavior
+R40
+R32
+R33
+R2
+R3
+DEx4 work 15 statemachine_tb 0 22 j7HDG`;DY^hnin;TnJ<WW2
+!i122 11
+l27
+L9 88
+VeRJ?FTO<4chMz`b=FB@@U2
+!s100 :Y@fPOk[RCkMLlK:lEM[k1
+R6
+32
+R44
+!i10b 1
+R45
+R46
+R47
+!i113 0
+R11
+Pvending_machine
+R2
+R3
+!i122 5
+R1
+R0
+R12
+R13
+l0
+L19 13
+VfVe?k2Z2_nKGRJ?aHKlEY1
+!s100 WN;Z]W70FJ0M47biB6:1>0
+R6
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R11
+Bbody
+R32
+R2
+R3
+!i122 5
+l0
+L33 1
+V8YW_6CJk^Qno=N:T;0a:80
+!s100 DofQBR[=ZQUOW?VK[H;572
+R6
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R11
+Evendingmachine
+w1753745802
+R19
+R32
+R18
+R33
+R2
+R3
+!i122 10
+R0
+8Quartus/VendingMachine/VendingMachine.vhd
+FQuartus/VendingMachine/VendingMachine.vhd
+l0
+L8 1
+VVkl>CmB[G;8k^k]O2h;Mk0
+!s100 8XaD2<I5P?gXeWKbbdMUC1
+R6
+32
+!s110 1753748593
+!i10b 1
+!s108 1753748593.000000
+!s90 Quartus/VendingMachine/VendingMachine.vhd|
+!s107 Quartus/VendingMachine/VendingMachine.vhd|
+!i113 0
+R11
+Evendingmachine_vhd_tst
+w1753748160
+R2
+R3
+!i122 1
+R0
+R42
+R43
+l0
+L31 1
+VWnf]<B9Z0eIXHS?fXgK>a0
+!s100 ]=`eZd4]13L@@LN65L?M?2
+R6
+32
+!s110 1753748164
+!i10b 1
+!s108 1753748164.000000
+R46
+R47
+!i113 0
+R11
