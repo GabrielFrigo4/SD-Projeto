@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fsm>
+  <states>
+    <state>
+      <values></values>
+      <position x="-60.0" y="180.0"/>
+      <number>0</number>
+      <name>sem btn</name>
+      <radius>70</radius>
+      <isInitial>true</isInitial>
+      <initialAngle>12</initialAngle>
+      <defaultDC>false</defaultDC>
+    </state>
+    <state>
+      <values>nv=1</values>
+      <position x="420.0" y="-60.0"/>
+      <number>1</number>
+      <name>nickel</name>
+      <radius>70</radius>
+      <isInitial>false</isInitial>
+      <initialAngle>12</initialAngle>
+      <defaultDC>false</defaultDC>
+    </state>
+    <state>
+      <values>nv=0, dv=0, qv=0</values>
+      <position x="780.0" y="180.0"/>
+      <number>2</number>
+      <name>saida</name>
+      <radius>70</radius>
+      <isInitial>false</isInitial>
+      <initialAngle>12</initialAngle>
+      <defaultDC>false</defaultDC>
+    </state>
+    <state>
+      <values>dv=1</values>
+      <position x="360.0" y="180.0"/>
+      <number>3</number>
+      <name>dime</name>
+      <radius>70</radius>
+      <isInitial>false</isInitial>
+      <initialAngle>12</initialAngle>
+      <defaultDC>false</defaultDC>
+    </state>
+    <state>
+      <values></values>
+      <position x="360.0" y="420.0"/>
+      <number>4</number>
+      <name>quarter</name>
+      <radius>70</radius>
+      <isInitial>false</isInitial>
+      <initialAngle>12</initialAngle>
+      <defaultDC>false</defaultDC>
+    </state>
+  </states>
+  <transitions>
+    <transition>
+      <values></values>
+      <position x="133.26154" y="-33.476913"/>
+      <fromState reference="../../../states/state"/>
+      <toState reference="../../../states/state[2]"/>
+      <condition>ni=1 &amp; di = 0 &amp; qi = 0</condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="630.0" y="15.000004"/>
+      <fromState reference="../../../states/state[2]"/>
+      <toState reference="../../../states/state[3]"/>
+      <condition></condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="360.0" y="-282.17093"/>
+      <fromState reference="../../../states/state[3]"/>
+      <toState reference="../../../states/state"/>
+      <condition>ni=0 &amp; di=0 &amp; qi = 0</condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="570.0" y="177.94289"/>
+      <fromState reference="../../../states/state[4]"/>
+      <toState reference="../../../states/state[3]"/>
+      <condition></condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="150.0" y="178.89838"/>
+      <fromState reference="../../../states/state"/>
+      <toState reference="../../../states/state[4]"/>
+      <condition>ni=0 &amp; di=1 &amp; qi=0</condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="108.13784" y="373.2588"/>
+      <fromState reference="../../../states/state"/>
+      <toState reference="../../../states/state[5]"/>
+      <condition>ni=0 &amp; di=0 &amp; qi=1</condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="626.56226" y="398.98392"/>
+      <fromState reference="../../../states/state[5]"/>
+      <toState reference="../../../states/state[3]"/>
+      <condition></condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="-187.0" y="251.0"/>
+      <fromState reference="../../../states/state"/>
+      <toState reference="../../../states/state"/>
+      <condition>ni=0 &amp; di=0 &amp; qi=0</condition>
+    </transition>
+    <transition>
+      <values></values>
+      <position x="931.0" y="92.0"/>
+      <fromState reference="../../../states/state[3]"/>
+      <toState reference="../../../states/state[3]"/>
+      <condition>ni=1 | di=1 | qi=1</condition>
+    </transition>
+  </transitions>
+</fsm>
