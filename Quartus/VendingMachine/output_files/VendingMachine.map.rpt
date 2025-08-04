@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VendingMachine
-Mon Jul 28 22:32:07 2025
+Mon Aug  4 11:25:07 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -14,19 +14,17 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |VendingMachine|StateMachine:state_machine0|present_state_signal
-  9. User-Specified and Inferred Latches
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Port Connectivity Checks: "DisplayDecimal:display0"
- 13. Port Connectivity Checks: "DisplayDecimal:display1"
- 14. Port Connectivity Checks: "DisplayDecimal:display2"
- 15. Port Connectivity Checks: "DisplayDecimal:display3"
- 16. Port Connectivity Checks: "DisplayDecimal:display4"
- 17. Port Connectivity Checks: "DisplayHexadecimal:display5"
- 18. Port Connectivity Checks: "StateMachine:state_machine0"
- 19. Post-Synthesis Netlist Statistics for Top Partition
- 20. Elapsed Time Per Partition
- 21. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "DisplayDecimal:display0"
+ 11. Port Connectivity Checks: "DisplayDecimal:display1"
+ 12. Port Connectivity Checks: "DisplayDecimal:display2"
+ 13. Port Connectivity Checks: "DisplayDecimal:display3"
+ 14. Port Connectivity Checks: "DisplayDecimal:display4"
+ 15. Port Connectivity Checks: "DisplayHexadecimal:display5"
+ 16. Port Connectivity Checks: "StateMachine:state_machine0"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -53,15 +51,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 28 22:32:07 2025           ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug  4 11:25:07 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; VendingMachine                                  ;
 ; Top-level Entity Name              ; VendingMachine                                  ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 73                                              ;
-;     Total combinational functions  ; 71                                              ;
-;     Dedicated logic registers      ; 17                                              ;
-; Total registers                    ; 17                                              ;
+; Total logic elements               ; 82                                              ;
+;     Total combinational functions  ; 80                                              ;
+;     Dedicated logic registers      ; 44                                              ;
+; Total registers                    ; 44                                              ;
 ; Total pins                         ; 50                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -163,30 +161,30 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 10          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 10          ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-10        ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                    ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
-; VendingMachine.vhd               ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd     ;         ;
-; WorkPackages.vhd                 ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd       ;         ;
-; DisplayDecimal.vhd               ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd     ;         ;
-; DisplayHexadecimal.vhd           ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayHexadecimal.vhd ;         ;
-; StateMachine.vhd                 ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd       ;         ;
-; Clock.vhd                        ; yes             ; User VHDL File  ; /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/Clock.vhd              ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------+---------+
+; VendingMachine.vhd               ; yes             ; User VHDL File  ; C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd     ;         ;
+; WorkPackages.vhd                 ; yes             ; User VHDL File  ; C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/WorkPackages.vhd       ;         ;
+; DisplayDecimal.vhd               ; yes             ; User VHDL File  ; C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/DisplayDecimal.vhd     ;         ;
+; DisplayHexadecimal.vhd           ; yes             ; User VHDL File  ; C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/DisplayHexadecimal.vhd ;         ;
+; StateMachine.vhd                 ; yes             ; User VHDL File  ; C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/StateMachine.vhd       ;         ;
+; Clock.vhd                        ; yes             ; User VHDL File  ; C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/Clock.vhd              ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -194,20 +192,20 @@ on the Quartus Prime software download page.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 73             ;
+; Estimated Total logic elements              ; 82             ;
 ;                                             ;                ;
-; Total combinational functions               ; 71             ;
+; Total combinational functions               ; 80             ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 48             ;
-;     -- 3 input functions                    ; 16             ;
-;     -- <=2 input functions                  ; 7              ;
+;     -- 4 input functions                    ; 29             ;
+;     -- 3 input functions                    ; 6              ;
+;     -- <=2 input functions                  ; 45             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 71             ;
-;     -- arithmetic mode                      ; 0              ;
+;     -- normal mode                          ; 55             ;
+;     -- arithmetic mode                      ; 25             ;
 ;                                             ;                ;
-; Total registers                             ; 17             ;
-;     -- Dedicated logic registers            ; 17             ;
+; Total registers                             ; 44             ;
+;     -- Dedicated logic registers            ; 44             ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 50             ;
@@ -215,9 +213,9 @@ on the Quartus Prime software download page.
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 17             ;
-; Total fan-out                               ; 384            ;
-; Average fan-out                             ; 2.04           ;
+; Maximum fan-out                             ; 27             ;
+; Total fan-out                               ; 400            ;
+; Average fan-out                             ; 1.79           ;
 +---------------------------------------------+----------------+
 
 
@@ -226,11 +224,10 @@ on the Quartus Prime software download page.
 +----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                         ; Entity Name    ; Library Name ;
 +----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------+----------------+--------------+
-; |VendingMachine                  ; 71 (5)              ; 17 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 50   ; 0            ; 0          ; |VendingMachine                             ; VendingMachine ; work         ;
-;    |DisplayDecimal:display0|     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |VendingMachine|DisplayDecimal:display0     ; DisplayDecimal ; work         ;
-;    |DisplayDecimal:display1|     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |VendingMachine|DisplayDecimal:display1     ; DisplayDecimal ; work         ;
+; |VendingMachine                  ; 80 (4)              ; 44 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 50   ; 0            ; 0          ; |VendingMachine                             ; VendingMachine ; work         ;
+;    |Clock:clock0|                ; 47 (47)             ; 27 (27)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |VendingMachine|Clock:clock0                ; Clock          ; work         ;
 ;    |DisplayDecimal:display3|     ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |VendingMachine|DisplayDecimal:display3     ; DisplayDecimal ; work         ;
-;    |StateMachine:state_machine0| ; 46 (46)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |VendingMachine|StateMachine:state_machine0 ; StateMachine   ; work         ;
+;    |StateMachine:state_machine0| ; 23 (23)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |VendingMachine|StateMachine:state_machine0 ; StateMachine   ; work         ;
 +----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -255,30 +252,12 @@ Encoding Type:  One-Hot
 +------------------------------+------------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+--------------------------+--------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                  ;
-+----------------------------------------------------+----------------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal                    ; Free of Timing Hazards ;
-+----------------------------------------------------+----------------------------------------+------------------------+
-; StateMachine:state_machine0|nickel_out_signal[0]   ; StateMachine:state_machine0|Selector17 ; yes                    ;
-; StateMachine:state_machine0|nickel_out_signal[1]   ; StateMachine:state_machine0|Selector17 ; yes                    ;
-; StateMachine:state_machine0|nickel_out_signal[2]   ; StateMachine:state_machine0|Selector17 ; yes                    ;
-; StateMachine:state_machine0|nickel_out_signal[3]   ; StateMachine:state_machine0|Selector17 ; yes                    ;
-; StateMachine:state_machine0|dime_out_signal[0]     ; StateMachine:state_machine0|Selector0  ; yes                    ;
-; StateMachine:state_machine0|dime_out_signal[1]     ; StateMachine:state_machine0|Selector0  ; yes                    ;
-; StateMachine:state_machine0|dime_out_signal[2]     ; StateMachine:state_machine0|Selector0  ; yes                    ;
-; StateMachine:state_machine0|dime_out_signal[3]     ; StateMachine:state_machine0|Selector0  ; yes                    ;
-; Number of user-specified and inferred latches = 8  ;                                        ;                        ;
-+----------------------------------------------------+----------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 17    ;
+; Total registers                              ; 44    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 11    ;
@@ -286,16 +265,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Number of registers using Clock Enable       ; 6     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |VendingMachine|StateMachine:state_machine0|Selector11 ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |VendingMachine|StateMachine:state_machine0|Selector14 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -372,19 +341,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 50                          ;
-; cycloneiii_ff         ; 17                          ;
+; cycloneiii_ff         ; 44                          ;
 ;     CLR               ; 11                          ;
 ;     ENA               ; 6                           ;
-; cycloneiii_lcell_comb ; 77                          ;
-;     normal            ; 77                          ;
+;     plain             ; 27                          ;
+; cycloneiii_lcell_comb ; 85                          ;
+;     arith             ; 25                          ;
+;         2 data inputs ; 25                          ;
+;     normal            ; 60                          ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 16                          ;
-;         4 data inputs ; 48                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 29                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.07                        ;
+; Max LUT depth         ; 4.50                        ;
+; Average LUT depth     ; 2.89                        ;
 +-----------------------+-----------------------------+
 
 
@@ -403,91 +375,59 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Mon Jul 28 22:32:02 2025
+    Info: Processing started: Mon Aug  4 11:24:56 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VendingMachine -c VendingMachine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file VendingMachine.vhd
-    Info (12022): Found design unit 1: VendingMachine-VendingMachine_ARCH File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 23
-    Info (12023): Found entity 1: VendingMachine File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 8
-Info (12021): Found 6 design units, including 0 entities, in source file WorkPackages.vhd
-    Info (12022): Found design unit 1: clock_system File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 4
-    Info (12022): Found design unit 2: clock_system-body File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 13
-    Info (12022): Found design unit 3: vending_machine File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 19
-    Info (12022): Found design unit 4: vending_machine-body File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 33
-    Info (12022): Found design unit 5: display_segment File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 39
-    Info (12022): Found design unit 6: display_segment-body File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/WorkPackages.vhd Line: 56
-Info (12021): Found 2 design units, including 1 entities, in source file DisplayDecimal.vhd
-    Info (12022): Found design unit 1: DisplayDecimal-DisplayDecimal_ARCH File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd Line: 12
-    Info (12023): Found entity 1: DisplayDecimal File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayDecimal.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file DisplayHexadecimal.vhd
-    Info (12022): Found design unit 1: DisplayHexadecimal-DisplayHexadecimal_ARCH File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayHexadecimal.vhd Line: 12
-    Info (12023): Found entity 1: DisplayHexadecimal File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/DisplayHexadecimal.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file StateMachine.vhd
-    Info (12022): Found design unit 1: StateMachine-StateMachine_ARCH File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 17
-    Info (12023): Found entity 1: StateMachine File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file Clock.vhd
-    Info (12022): Found design unit 1: Clock-Clock_ARCH File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/Clock.vhd Line: 11
-    Info (12023): Found entity 1: Clock File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/Clock.vhd Line: 4
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file vendingmachine.vhd
+    Info (12022): Found design unit 1: VendingMachine-VendingMachine_ARCH File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 23
+    Info (12023): Found entity 1: VendingMachine File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 8
+Info (12021): Found 6 design units, including 0 entities, in source file workpackages.vhd
+    Info (12022): Found design unit 1: clock_system File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/WorkPackages.vhd Line: 4
+    Info (12022): Found design unit 2: clock_system-body File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/WorkPackages.vhd Line: 13
+    Info (12022): Found design unit 3: vending_machine File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/WorkPackages.vhd Line: 19
+    Info (12022): Found design unit 4: vending_machine-body File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/WorkPackages.vhd Line: 33
+    Info (12022): Found design unit 5: display_segment File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/WorkPackages.vhd Line: 39
+    Info (12022): Found design unit 6: display_segment-body File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/WorkPackages.vhd Line: 56
+Info (12021): Found 2 design units, including 1 entities, in source file displaydecimal.vhd
+    Info (12022): Found design unit 1: DisplayDecimal-DisplayDecimal_ARCH File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/DisplayDecimal.vhd Line: 12
+    Info (12023): Found entity 1: DisplayDecimal File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/DisplayDecimal.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file displayhexadecimal.vhd
+    Info (12022): Found design unit 1: DisplayHexadecimal-DisplayHexadecimal_ARCH File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/DisplayHexadecimal.vhd Line: 12
+    Info (12023): Found entity 1: DisplayHexadecimal File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/DisplayHexadecimal.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file statemachine.vhd
+    Info (12022): Found design unit 1: StateMachine-StateMachine_ARCH File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/StateMachine.vhd Line: 17
+    Info (12023): Found entity 1: StateMachine File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/StateMachine.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file clock.vhd
+    Info (12022): Found design unit 1: Clock-Clock_ARCH File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/Clock.vhd Line: 12
+    Info (12023): Found entity 1: Clock File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/Clock.vhd Line: 5
 Info (12127): Elaborating entity "VendingMachine" for the top level hierarchy
-Info (12128): Elaborating entity "Clock" for hierarchy "Clock:clock0" File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 32
-Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:state_machine0" File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 39
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(123): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 123
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(124): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 124
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(129): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 129
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(130): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 130
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(135): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 135
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(136): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 136
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(141): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 141
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(142): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 142
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(147): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 147
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(148): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 148
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(169): signal "nickel_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 169
-Warning (10492): VHDL Process Statement warning at StateMachine.vhd(170): signal "dime_out_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 170
-Warning (10631): VHDL Process Statement warning at StateMachine.vhd(48): inferring latch(es) for signal or variable "nickel_out_signal", which holds its previous value in one or more paths through the process File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at StateMachine.vhd(48): inferring latch(es) for signal or variable "dime_out_signal", which holds its previous value in one or more paths through the process File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "dime_out_signal[0]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "dime_out_signal[1]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "dime_out_signal[2]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "dime_out_signal[3]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "nickel_out_signal[0]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "nickel_out_signal[1]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "nickel_out_signal[2]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (10041): Inferred latch for "nickel_out_signal[3]" at StateMachine.vhd(48) File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-Info (12128): Elaborating entity "DisplayHexadecimal" for hierarchy "DisplayHexadecimal:display5" File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 53
-Info (12128): Elaborating entity "DisplayDecimal" for hierarchy "DisplayDecimal:display4" File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 61
-Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[0] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[1] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[2] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|nickel_out_signal[3] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[0] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[1] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[2] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
-Warning (13012): Latch StateMachine:state_machine0|dime_out_signal[3] has unsafe behavior File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 48
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:state_machine0|present_state_signal.stcandy File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/StateMachine.vhd Line: 18
+Info (12128): Elaborating entity "Clock" for hierarchy "Clock:clock0" File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 32
+Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:state_machine0" File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 39
+Info (12128): Elaborating entity "DisplayHexadecimal" for hierarchy "DisplayHexadecimal:display5" File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 53
+Info (12128): Elaborating entity "DisplayDecimal" for hierarchy "DisplayDecimal:display4" File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 61
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 15
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 16
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 17
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 17
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 17
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/gabrielf/Documentos/GitHub/UFABC/SD-Projeto/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 13
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 13
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 13
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 14
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 14
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 14
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 15
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 16
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 17
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 17
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 17
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 18
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/VendingMachine.vhd Line: 18
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 185 assignments for entity "DE10_Lite" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[0] -entity DE10_Lite was ignored
@@ -677,14 +617,14 @@ Warning (20013): Ignored 185 assignments for entity "DE10_Lite" -- entity does n
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity DE10_Lite was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 125 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 133 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 45 output pins
-    Info (21061): Implemented 75 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 233 warnings
-    Info: Peak virtual memory: 475 megabytes
-    Info: Processing ended: Mon Jul 28 22:32:07 2025
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:12
+    Info (21061): Implemented 83 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 209 warnings
+    Info: Peak virtual memory: 4813 megabytes
+    Info: Processing ended: Mon Aug  4 11:25:07 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:21
 
 

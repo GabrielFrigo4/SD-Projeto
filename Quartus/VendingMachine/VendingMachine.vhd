@@ -41,7 +41,7 @@ begin
 			clk				=> clk,
 			rst				=> not KEY(1),
 			tss				=> not KEY(0),
-			coin			=> SW,
+			coin				=> SW,
 			present_state	=> present_state,
 			candy_out		=> candy_out,
 			nickel_out		=> nickel_out,
