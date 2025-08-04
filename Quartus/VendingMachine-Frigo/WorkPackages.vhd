@@ -1,18 +1,3 @@
--- BEGIN Clock
-library ieee;
-use ieee.std_logic_1164.all;
-package clock_system is
-	component Clock is
-		port(
-			CLK_IN	: in std_logic;
-			CLK_OUT	: out std_logic
-		);
-	end component;
-end package;
-
-package body clock_system is end package body;
--- END Clock
-
 -- BEGIN VendingMachine
 library ieee;
 use ieee.std_logic_1164.all;
@@ -30,6 +15,29 @@ end package;
 
 package body vending_machine is end package body;
 -- END VendingMachine
+
+-- BEGIN TimeSystem
+library ieee;
+use ieee.std_logic_1164.all;
+package time_system is
+	component Clock is
+		port(
+			CLK_IN	: in std_logic;
+			CLK_OUT	: out std_logic
+		);
+	end component;
+	component Delay is
+		port (
+			CLK		: in  std_logic;
+			RST		: in  std_logic;
+			START	: in  std_logic;
+			DONE	: out std_logic
+		);
+	end component;
+end package;
+
+package body time_system is end package body;
+-- END TimeSystem
 
 -- BEGIN DisplaySegment
 library ieee;

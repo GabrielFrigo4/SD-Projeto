@@ -1,22 +1,21 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use work.clock_system.all;
+use work.time_system.all;
 use work.vending_machine.all;
 use work.display_segment.all;
 
 entity VendingMachine is
 	port(
 		CLOCK_50	: in std_logic;
-		SW			: in std_logic_vector(9 downto 0);
+		SW			: in std_logic_vector(3 downto 0);
 		KEY			: in std_logic_vector(1 downto 0);
 		HEX0		: out std_logic_vector(6 downto 0);
 		HEX1		: out std_logic_vector(6 downto 0);
 		HEX2		: out std_logic_vector(6 downto 0);
 		HEX3		: out std_logic_vector(6 downto 0);
 		HEX4		: out std_logic_vector(6 downto 0);
-		HEX5		: out std_logic_vector(6 downto 0);
-		LEDR		: out std_logic_vector(9 downto 0)
+		HEX5		: out std_logic_vector(6 downto 0)
 	);
 end VendingMachine;
 
@@ -28,14 +27,12 @@ architecture VendingMachine_ARCH of VendingMachine is
 	signal present_state_dig0, present_state_dig1	: std_logic_vector(3 downto 0);
 	signal candy_out_dig							: std_logic_vector(3 downto 0);
 begin
-	-- Clock
 	clock0 : component Clock
 		port map(
 			CLK_IN	=> CLOCK_50,
 			CLK_OUT	=> clk
 		);
 
-	-- State Machine
 	state_machine0 : component StateMachine
 		port map(
 			clk					=> clk,
@@ -50,10 +47,6 @@ begin
 			present_state_out	=> present_state
 		);
 
-	-- Led
-	LEDR <= dime_out & "00011000" & nickel_out;
-
-	-- Display nao utilizado (DEBUG)
 	display5 : component DisplayHexadecimal
 		port map(
 			EN	=> '0',
@@ -61,7 +54,6 @@ begin
 			HEX	=> HEX5
 		);
 
-	-- Display do docinho
 	display4 : component DisplayDecimal
 		port map(
 			EN	=> '1',
@@ -69,7 +61,6 @@ begin
 			HEX	=> HEX4
 		);
 
-	-- Display das moedas inseridas (parte decimal)
 	display3 : component DisplayDecimal
 		port map(
 			EN	=> '1',
@@ -77,7 +68,6 @@ begin
 			HEX	=> HEX3
 		);
 
-	-- Display das moedas inseridas (parte unitaria)
 	display2 : component DisplayDecimal
 		port map(
 			EN	=> '1',
@@ -85,7 +75,6 @@ begin
 			HEX	=> HEX2
 		);
 
-	-- Display do numero de dimes devolvidos
 	display1 : component DisplayDecimal
 		port map(
 			EN	=> '1',
@@ -93,7 +82,6 @@ begin
 			HEX	=> HEX1
 		);
 
-	-- Display do numero de nickels devolvidos
 	display0 : component DisplayDecimal
 		port map(
 			EN	=> '1',
@@ -120,5 +108,5 @@ begin
 			std_logic_vector(to_unsigned(5, 4)) when st35,
 			std_logic_vector(to_unsigned(5, 4)) when st45,
 			std_logic_vector(to_unsigned(0, 4)) when others;
-	candy_out_dig <= "0001" when candy_out = '1' else "0000";
+	candy_out_dig <= std_logic_vector(to_unsigned(1, 4)) when candy_out = '1' else std_logic_vector(to_unsigned(0, 4));
 end VendingMachine_ARCH;

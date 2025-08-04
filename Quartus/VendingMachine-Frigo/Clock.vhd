@@ -10,16 +10,15 @@ entity Clock is
 end entity Clock;
 
 architecture Clock_ARCH of Clock is
-	constant DIVISOR : integer := 30000000;
-	signal contador : integer range 0 to DIVISOR - 1 := 0;
-	signal clk_out_interno : std_logic := '0';
-
+	constant CLOCK_CYCLES	: integer := 1;
+	signal contador 		: integer range 0 to CLOCK_CYCLES - 1 := 0;
+	signal clk_out_interno	: std_logic := '0';
 begin
 	process(CLK_IN)
 	begin
 		if rising_edge(CLK_IN) then
-			if contador = DIVISOR - 1 then
-				clk_out_interno <= not clk_out_interno; 
+			if contador = CLOCK_CYCLES - 1 then
+				clk_out_interno <= not clk_out_interno;
 				contador <= 0;
 			else
 				contador <= contador + 1;
