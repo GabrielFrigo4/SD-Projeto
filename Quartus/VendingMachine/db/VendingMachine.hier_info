@@ -1,9 +1,8 @@
 |VendingMachine
 CLOCK_50 => Clock:clock0.CLK_IN
+CLOCK_50 => StateMachine:state_machine0.CLOCK_50
 SW[0] => StateMachine:state_machine0.coin[0]
-SW[0] => DisplayHexadecimal:display5.DIG[1]
 SW[1] => StateMachine:state_machine0.coin[1]
-SW[1] => DisplayHexadecimal:display5.DIG[2]
 KEY[0] => StateMachine:state_machine0.tss
 KEY[1] => StateMachine:state_machine0.rst
 HEX0[0] << DisplayDecimal:display0.HEX[0]
@@ -85,23 +84,18 @@ CLK_OUT <= clk_1s_reg.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VendingMachine|StateMachine:state_machine0
-clk => tss_prev.CLK
-clk => toss_coin[0].CLK
-clk => toss_coin[1].CLK
-clk => led[0]~reg0.CLK
-clk => led[1]~reg0.CLK
-clk => led[2]~reg0.CLK
+CLOCK_50 => tss_prev.CLK
+CLOCK_50 => return_coin~reg0.CLK
+CLOCK_50 => toss_coin[0].CLK
+CLOCK_50 => toss_coin[1].CLK
+CLOCK_50 => led[0]~reg0.CLK
+CLOCK_50 => led[1]~reg0.CLK
+CLOCK_50 => led[2]~reg0.CLK
 clk => present_state_signal~1.DATAIN
 rst => present_state_signal~3.DATAIN
-rst => led[2]~reg0.ENA
-rst => led[1]~reg0.ENA
-rst => led[0]~reg0.ENA
-rst => toss_coin[1].ENA
-rst => toss_coin[0].ENA
-rst => tss_prev.ENA
 tss => process_0.IN1
-tss => led[2]~reg0.DATAIN
 tss => tss_prev.DATAIN
+tss => led[2]~reg0.DATAIN
 coin[0] => toss_coin.DATAB
 coin[0] => led[0]~reg0.DATAIN
 coin[1] => toss_coin.DATAB
@@ -116,8 +110,7 @@ present_state.st30 <= present_state.st30.DB_MAX_OUTPUT_PORT_TYPE
 present_state.st35 <= present_state.st35.DB_MAX_OUTPUT_PORT_TYPE
 present_state.st40 <= present_state.st40.DB_MAX_OUTPUT_PORT_TYPE
 present_state.st45 <= present_state.st45.DB_MAX_OUTPUT_PORT_TYPE
-present_state.stcandy <= present_state.stcandy.DB_MAX_OUTPUT_PORT_TYPE
-candy_out <= candy_out.DB_MAX_OUTPUT_PORT_TYPE
+candy_out <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 nickel_out[0] <= nickel_out.DB_MAX_OUTPUT_PORT_TYPE
 nickel_out[1] <= <GND>
 nickel_out[2] <= <GND>
@@ -126,6 +119,7 @@ dime_out[0] <= dime_out.DB_MAX_OUTPUT_PORT_TYPE
 dime_out[1] <= <GND>
 dime_out[2] <= <GND>
 dime_out[3] <= <GND>
+return_coin <= return_coin~reg0.DB_MAX_OUTPUT_PORT_TYPE
 led[0] <= led[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 led[1] <= led[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 led[2] <= led[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE

@@ -8,7 +8,7 @@ use work.display_segment.all;
 entity VendingMachine is
 	port(
 		CLOCK_50	: in std_logic;
-		SW			: in std_logic_vector(1 downto 0); -- TODO: ver se funciona
+		SW			: in std_logic_vector(1 downto 0);
 		KEY			: in std_logic_vector(1 downto 0);
 		HEX0		: out std_logic_vector(6 downto 0);
 		HEX1		: out std_logic_vector(6 downto 0);
@@ -21,12 +21,13 @@ entity VendingMachine is
 end VendingMachine;
 
 architecture VendingMachine_ARCH of VendingMachine is
-	signal clk										: std_logic;
-	signal present_state							: state;
-	signal candy_out								: std_logic;
-	signal nickel_out, dime_out						: std_logic_vector(3 downto 0);
+	signal clk													: std_logic;
+	signal present_state										: state;
+	signal candy_out											: std_logic;
+	signal nickel_out, dime_out							: std_logic_vector(3 downto 0);
 	signal present_state_dig0, present_state_dig1	: std_logic_vector(3 downto 0);
-	signal candy_out_dig							: std_logic_vector(3 downto 0);
+	signal candy_out_dig										: std_logic_vector(3 downto 0);
+	signal return_coin										: std_logic;
 begin
 	-- Clock
 	clock0 : component Clock
@@ -38,6 +39,7 @@ begin
 	-- State Machine
 	state_machine0 : component StateMachine
 		port map(
+			CLOCK_50			=> CLOCK_50,
 			clk				=> clk,
 			rst				=> not KEY(1),
 			tss				=> not KEY(0),
@@ -46,14 +48,15 @@ begin
 			candy_out		=> candy_out,
 			nickel_out		=> nickel_out,
 			dime_out 		=> dime_out,
+			return_coin		=> return_coin,
 			led				=> LEDR
 		);
 
-	-- Display nao utilizado (DEBUG)
+	-- Display de retornar qualquer moeda inserida na maquina
 	display5 : component DisplayHexadecimal
 		port map(
-			EN	=> '0',
-			DIG	=> "0" & SW(1) & SW(0) & clk,
+			EN	=> '1',
+			DIG	=> "000" & return_coin,
 			HEX	=> HEX5
 		);
 
@@ -103,7 +106,6 @@ begin
 			"0001" when st15,
 			"0010" when st20,
 			"0010" when st25,
-			"0010" when stcandy,
 			"0011" when st30,
 			"0011" when st35,
 			"0100" when st40,
@@ -114,7 +116,6 @@ begin
 			"0101" when st5,
 			"0101" when st15,
 			"0101" when st25,
-			"0101" when stcandy,
 			"0101" when st35,
 			"0101" when st45,
 			"0000" when others;

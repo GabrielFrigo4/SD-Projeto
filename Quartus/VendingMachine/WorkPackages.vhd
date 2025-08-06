@@ -17,15 +17,16 @@ package body clock_system is end package body;
 library ieee;
 use ieee.std_logic_1164.all;
 package vending_machine is
-	type state is (st0, st5, st10, st15, st20, st25, st30, st35, st40, st45, stcandy);
+	type state is (st0, st5, st10, st15, st20, st25, st30, st35, st40, st45);
 	component StateMachine is
 		port(
-			clk, rst, tss			: in std_logic;
-			coin					: in std_logic_vector(1 downto 0);
-			present_state			: out state;
-			candy_out				: out std_logic;
-			nickel_out, dime_out	: out std_logic_vector(3 downto 0);
-			led						: out std_logic_vector(2 downto 0)
+			CLOCK_50, clk, rst, tss	: in std_logic;
+			coin							: in std_logic_vector(1 downto 0);
+			present_state				: out state;
+			candy_out					: out std_logic;
+			nickel_out, dime_out		: out std_logic_vector(3 downto 0);
+			return_coin					: out std_logic;
+			led							: out std_logic_vector(2 downto 0)
 		);
 	end component;
 end package;
