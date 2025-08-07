@@ -52,8 +52,8 @@ HEX5[6] << DisplayHexadecimal:display5.HEX[6]
 
 |VendingMachine|Clock:clock0
 CLK_IN => contador.CLK
-CLK_IN => clk_out_interno.CLK
-CLK_OUT <= clk_out_interno.DB_MAX_OUTPUT_PORT_TYPE
+CLK_IN => clk_local.CLK
+CLK_OUT <= clk_local.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VendingMachine|StateMachine:state_machine0

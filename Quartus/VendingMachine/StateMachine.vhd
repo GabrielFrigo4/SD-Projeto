@@ -16,21 +16,18 @@ architecture StateMachine_ARCH of StateMachine is
 	signal present_state	: state;
 	signal next_state		: state;
     signal btn_prev			: std_logic := '0';
-    signal btn_click		: std_logic;
-	signal delay_rst		: std_logic;
-	signal delay_start		: std_logic;
-	signal delay_done		: std_logic;
+    signal btn_click		: std_logic := '0';
+	signal delay_start		: std_logic := '0';
+	signal delay_done		: std_logic := '0';
 begin
-	delay_rst <= '0';
+	btn_click <= btn and (not btn_prev);
 	delay0 : component Delay
 		port map(
 			CLK		=> clk,
-			RST		=> delay_rst,
+			RST		=> '0',
 			START	=> delay_start,
 			DONE	=> delay_done
 		);
-
-	btn_click <= btn and (not btn_prev);
 
 	process (rst, clk)
 	begin
