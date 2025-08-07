@@ -10,22 +10,20 @@ entity Clock is
 end entity Clock;
 
 architecture Clock_ARCH of Clock is
-	constant MAX_COUNT : unsigned(25 downto 0) := to_unsigned(99999999, 26); -- 50M - 1
-	signal counter     : unsigned(25 downto 0) := (others => '0');
-   signal clk_1s_reg  : STD_LOGIC := '0';
+	constant CLOCK_CYCLES	: integer := 1;
+	signal contador 		: integer range 0 to CLOCK_CYCLES - 1 := 0;
+	signal clk_out_interno	: std_logic := '0';
 begin
 	process(CLK_IN)
-    begin
+	begin
 		if rising_edge(CLK_IN) then
-			if counter = MAX_COUNT then
-				counter    <= (others => '0');
-				clk_1s_reg <= '1';  -- Pulso alto por 1 ciclo
+			if contador = CLOCK_CYCLES - 1 then
+				clk_out_interno <= not clk_out_interno;
+				contador <= 0;
 			else
-				counter    <= counter + 1;
-				clk_1s_reg <= '0';
+				contador <= contador + 1;
 			end if;
 		end if;
-    end process;
-
-    CLK_OUT <= clk_1s_reg;
+	end process;
+	CLK_OUT <= clk_out_interno;
 end architecture Clock_ARCH;

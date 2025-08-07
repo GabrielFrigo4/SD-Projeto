@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Users/anthony.tegoshi/Downloads/SD-Projeto-main/SD-Projeto-main/Quartus/VendingMachine/output_files/") File("VendingMachine.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/gabriel.frigo/Downloads/SD-Projeto-main/Quartus/VendingMachine/output_files/") File("VendingMachine.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
