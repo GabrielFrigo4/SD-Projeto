@@ -12,7 +12,7 @@ entity Delay is
 end entity Delay;
 
 architecture Delay_ARCH of Delay is
-	constant DELAY_CYCLES	: integer := 25_000_000;
+	constant DELAY_CYCLES	: integer := 25;
 	signal counter			: integer range 0 to DELAY_CYCLES;
 begin
 	process(CLK, RST)

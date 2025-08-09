@@ -127,6 +127,9 @@ begin
 					next_state	<= st0;
 					delay_start	<= '0';
 				else
+					candy_out	<= '0';
+					nickel_out	<= '0';
+					dime_out	<= '0';
 					next_state <= st25;
 				end if;
 
@@ -139,6 +142,9 @@ begin
 					next_state	<= st0;
 					delay_start	<= '0';
 				else
+					candy_out	<= '0';
+					nickel_out	<= '0';
+					dime_out	<= '0';
 					next_state <= st30;
 				end if;
 
@@ -151,6 +157,9 @@ begin
 					next_state	<= st0;
 					delay_start	<= '0';
 				else
+					candy_out	<= '0';
+					nickel_out	<= '0';
+					dime_out	<= '0';
 					next_state <= st35;
 				end if;
 
@@ -163,6 +172,9 @@ begin
 					next_state	<= st35;
 					delay_start	<= '0';
 				else
+					candy_out	<= '0';
+					nickel_out	<= '0';
+					dime_out	<= '0';
 					next_state <= st40;
 				end if;
 
@@ -175,6 +187,9 @@ begin
 					next_state	<= st35;
 					delay_start	<= '0';
 				else
+					candy_out	<= '0';
+					nickel_out	<= '0';
+					dime_out	<= '0';
 					next_state <= st45;
 				end if;
 		end case;
