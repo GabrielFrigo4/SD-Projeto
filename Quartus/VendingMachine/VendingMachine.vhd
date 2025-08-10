@@ -17,7 +17,7 @@ entity VendingMachine is
 		HEX4		: out std_logic_vector(6 downto 0);
 		HEX5		: out std_logic_vector(6 downto 0)
 	);
-end VendingMachine;
+end entity VendingMachine;
 
 architecture VendingMachine_ARCH of VendingMachine is
 	signal clk										: std_logic;
@@ -109,4 +109,4 @@ begin
 			std_logic_vector(to_unsigned(5, 4)) when st45,
 			std_logic_vector(to_unsigned(0, 4)) when others;
 	candy_out_dig <= std_logic_vector(to_unsigned(1, 4)) when candy_out = '1' else std_logic_vector(to_unsigned(0, 4));
-end VendingMachine_ARCH;
+end architecture VendingMachine_ARCH;

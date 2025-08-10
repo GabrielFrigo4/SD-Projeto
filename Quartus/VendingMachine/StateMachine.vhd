@@ -10,7 +10,7 @@ entity StateMachine is
 		candy_out, nickel_out, dime_out	: out std_logic;
 		present_state_out				: out state
 	);
-end StateMachine;
+end entity StateMachine;
 
 architecture StateMachine_ARCH of StateMachine is
 	signal present_state	: state;
@@ -180,4 +180,4 @@ begin
 		end case;
 	end process;
 
-end StateMachine_ARCH;
+end architecture StateMachine_ARCH;

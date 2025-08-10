@@ -7,7 +7,7 @@ entity DisplayDecimal is
 		DIG	: in std_logic_vector(3 downto 0);
 		HEX	: out std_logic_vector(6 downto 0)
 	);
-end DisplayDecimal;
+end entity DisplayDecimal;
 
 architecture DisplayDecimal_ARCH of DisplayDecimal is
 begin
@@ -31,4 +31,4 @@ begin
 			end case;
 		end if;
 	end process;
-end DisplayDecimal_ARCH;
+end architecture DisplayDecimal_ARCH;

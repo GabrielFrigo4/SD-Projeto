@@ -7,7 +7,7 @@ entity DisplayHexadecimal is
 		DIG	: in std_logic_vector(3 downto 0);
 		HEX	: out std_logic_vector(6 downto 0)
 	);
-end DisplayHexadecimal;
+end entity DisplayHexadecimal;
 
 architecture DisplayHexadecimal_ARCH of DisplayHexadecimal is
 begin
@@ -36,4 +36,4 @@ begin
 			end case;
 		end if;
 	end process;
-end DisplayHexadecimal_ARCH;
+end architecture DisplayHexadecimal_ARCH;

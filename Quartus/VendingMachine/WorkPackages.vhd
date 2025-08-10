@@ -10,8 +10,8 @@ package vending_machine is
 			candy_out, nickel_out, dime_out	: out std_logic;
 			present_state_out				: out state
 		);
-	end component;
-end package;
+	end component StateMachine;
+end package vending_machine;
 
 package body vending_machine is end package body;
 -- END VendingMachine
@@ -25,7 +25,7 @@ package time_system is
 			CLK_IN	: in std_logic;
 			CLK_OUT	: out std_logic
 		);
-	end component;
+	end component Clock;
 	component Delay is
 		port (
 			CLK		: in  std_logic;
@@ -33,8 +33,8 @@ package time_system is
 			START	: in  std_logic;
 			DONE	: out std_logic
 		);
-	end component;
-end package;
+	end component Delay;
+end package time_system;
 
 package body time_system is end package body;
 -- END TimeSystem
@@ -49,15 +49,15 @@ package display_segment is
 			DIG	: in std_logic_vector(3 downto 0);
 			HEX	: out std_logic_vector(6 downto 0)
 		);
-	end component;
+	end component DisplayDecimal;
 	component DisplayHexadecimal is
 		port(
 			EN	: in std_logic;
 			DIG	: in std_logic_vector(3 downto 0);
 			HEX	: out std_logic_vector(6 downto 0)
 		);
-	end component;
-end package;
+	end component DisplayHexadecimal;
+end package display_segment;
 
 package body display_segment is end package body;
 -- END DisplaySegment
